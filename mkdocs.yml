@@ -37,7 +37,9 @@ nav:
     - 技术栈:
       - zh/tech/index.md
     - 你来人间一趟: 
-      - zh/art/index.md
+      - 诗人怀着敢想敢梦的心，到远方去: zh/art/poem/index.md
+        - 序: zh/art/poem/preface.md
+        - 2016/8/4: 
     - 我与这个世界: 
       - zh/me/index.md
     - 来日方长: 

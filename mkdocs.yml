@@ -34,31 +34,121 @@ theme:
 
 # 导航栏
 nav:
-    - 技术栈:
-      - zh/tech/index.md
-    - 你来人间一趟: 
-      - 诗人怀着敢想敢梦的心，到远方去: zh/art/poem/index.md
-        - 序: zh/art/poem/preface.md
-        - 2016/8/4: zh/art/poem/20160804.md
-        - 2016/9: zh/art/poem/201609.md
-        - 2018/5/19: zh/art/poem/20180519.md
-        
-    - 我与这个世界: 
-      - zh/me/index.md
-    - 来日方长: 
-      - zh/future/index.md
-
+  - 技术栈:
+    - zh/tech/index.md
+  - 你来人间一趟: 
+    - zh/art/index.md
+    - 诗人怀着敢想敢梦的心，到远方去: #诗作和短文 
+      - zh/art/poem/index.md
+      - 2016/8/4: zh/art/poem/20160804.md
+      - 2016/9/1: zh/art/poem/20160901.md
+      - 2018/5/19: zh/art/poem/20180519.md
+      - 2018/6/1: zh/art/poem/20180601.md
+      - 2018/6/17: zh/art/poem/20180617.md
+      - 2018/7/1: zh/art/poem/20180701.md
+      - 2018/7/21: zh/art/poem/20180721.md
+      - 2018/7/24: zh/art/poem/20180724.md
+      - 2018/7/28: zh/art/poem/20180728.md
+      - 2018/9/8: zh/art/poem/20180908.md
+      - 2018/9/23: zh/art/poem/20180923.md
+      - 2018/12/15: zh/art/poem/20181215.md
+      - 2019/1/1: zh/art/poem/20190101.md
+      - 2019/1/16: zh/art/poem/20190116.md
+      - 2019/1/20: zh/art/poem/20190120.md
+      - 2019/1/27: zh/art/poem/20190127.md
+      - 2019/2/1: zh/art/poem/20190201.md
+      - 2019/2/2: zh/art/poem/20190202.md
+      - 2019/2/5: zh/art/poem/20190205.md
+      - 2019/3/1: zh/art/poem/20190301.md
+      - 2019/3/18: zh/art/poem/20190318.md
+      - 2019/3/31: zh/art/poem/20190331.md
+      - 2019/5/27: zh/art/poem/20190527.md
+      - 2019/5/31: zh/art/poem/20190531.md
+      - 2019/6/1: zh/art/poem/20190601.md
+      - 2019/6/2: zh/art/poem/20190602.md
+      - 2019/6/4: zh/art/poem/20190604.md
+      - 2019/7/1: zh/art/poem/20190701.md
+      - 2019/8/6: zh/art/poem/20190806.md
+      - 2019/9/1: zh/art/poem/20190901.md
+      - 2019/9/24: zh/art/poem/20190924.md
+      - 2019/10/13: zh/art/poem/20191013.md
+      - 2019/10/15: zh/art/poem/20191015.md
+      - 2019/11/9: zh/art/poem/20191109.md
+      - 2019/11/30: zh/art/poem/20191130.md
+      - 2020/1/27: zh/art/poem/20200127.md
+      - 2020/2/1: zh/art/poem/20200201.md
+      - 2020/3/2: zh/art/poem/20200302.md
+      - 2020/3/5: zh/art/poem/20200305.md
+      - 2020/4/15: zh/art/poem/20200415.md
+      - 2020/5/2: zh/art/poem/20200502.md
+      - 2020/5/19: zh/art/poem/20200519.md
+      - 2020/5/20: zh/art/poem/20200520.md
+      - 2020/5/21: zh/art/poem/20200521.md
+      - 2020/5/23: zh/art/poem/20200523.md
+      - 2020/6/4: zh/art/poem/20200604.md
+      - 2020/6/24: zh/art/poem/20200624.md
+      - 2020/7/8: zh/art/poem/20200708.md
+      - 2020/7/22: zh/art/poem/20200722.md
+      - 2020/8/4: zh/art/poem/20200804.md
+      - 2020/9/27: zh/art/poem/20200927.md
+      - 2020/10/1: zh/art/poem/20201001.md
+      - 2020/10/7: zh/art/poem/20201007.md
+      - 2020/10/11: zh/art/poem/20201011.md
+      - 2020/11/1: zh/art/poem/20201101.md
+      - 2020/11/7: zh/art/poem/20201107.md
+      - 2021/1/16: zh/art/poem/20210116.md
+      - 2020/12/5: zh/art/poem/20201205.md
+      - 2020/12/30: zh/art/poem/20201230.md
+      - 2021/12/13: zh/art/poem/20211213.md
+      - 2021/12/16: zh/art/poem/20211216.md
+      - 2018-1: zh/art/poem/2018-1.md
+      - 2018-2: zh/art/poem/2018-2.md
+      - 2018-3: zh/art/poem/2018-3.md
+      - 2018-4: zh/art/poem/2018-4.md
+      - 2018-5: zh/art/poem/2018-5.md
+      - 2018-6: zh/art/poem/2018-6.md
+      - 2018-7: zh/art/poem/2018-7.md
+      - 2018-8: zh/art/poem/2018-8.md
+      - 2018-9: zh/art/poem/2018-9.md
+      - 2018-10: zh/art/poem/2018-10.md
+      - 2018-11: zh/art/poem/2018-11.md
+      - 2019-1: zh/art/poem/2019-1.md
+      - 2019-2: zh/art/poem/2019-2.md
+      - 2019-3: zh/art/poem/2019-3.md
+      - 2019-4: zh/art/poem/2019-4.md
+      - 2020-1: zh/art/poem/2020-1.md
+    # - 年少不知愁滋味: #散文
+    - 我眼底的世界吗: #设计与绘画
+      - zh/art/design/index.md
+      - 东京食尸鬼: zh/art/design/东京食尸鬼.md
+      - 史迪仔: zh/art/design/史迪仔.md
+      - 星空: zh/art/design/星空.md
+      - 模特:  zh/art/design/模特.md
+      - 乒乓球拍: zh/art/design/乒乓球拍.md
+      - 魔女宅急便: zh/art/design/魔女宅急便.md
+      - 一些字合集: zh/art/design/字.md
+      - 暑校: zh/art/design/暑校.md
+      - 高中无聊手作合集: zh/art/design/DIY.md
+      - 仰望: zh/art/design/仰望.md
+      - 晚霞: zh/art/design/晚霞.md
+      - 班级吉祥物: zh/art/design/班级吉祥物.md
+      - 宿舍门牌: zh/art/design/宿舍门牌.md
+      - 万神纪宣传图: zh/art/design/万神纪宣传图.md
+      - 学生节周边: zh/art/design/学生节海报.md
+      - MarsTicket: zh/art/design/MarsTicket.md
+      - 高铁海报: zh/art/design/高铁海报.md
+      - 情头: zh/art/design/情头.md
+  - 我与这个世界: 
+    - zh/me/index.md
+    - 个人履历: zh/me/cv.md
+    - 社交平台: zh/me/socialmedia.md
+    
+  - 来日方长: 
+    - zh/future/index.md
 
 # [Extensions]
-hide:
-  - footer
-  
 plugins:
-  - search: # 现在还不支持中文搜索 支持之后可以设置语言
-      lang:
-        - zh
   - tags # 给单篇文章添加标签 https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/?h=tags
-
 markdown_extensions:
   - pymdownx.arithmatex: # latex支持
       generic: true
@@ -70,6 +160,9 @@ markdown_extensions:
       # auto_title: true # 显示编程语言名称
   - pymdownx.superfences # 代码块高亮插件
   - meta # 支持Markdown文件上方自定义标题标签等
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 extra_javascript:
   # latex支持
@@ -81,7 +174,6 @@ extra_javascript:
 extra_css:
   - mkdocs/css/no-footer.css # 不使用底部的翻页
   - mkdocs/css/unordered-list-symbols.css # multiplt unordered list symbols
-
 extra:
   generator: false
   alternate:
@@ -91,3 +183,6 @@ extra:
     - name: Chinese
       link: /zh/
       lang: zh
+
+
+      

@@ -13,7 +13,7 @@ Thingamabob这个词本身就没啥意义，有种不被定义的感觉。有时
 > “我们终其一生，就是要摆脱别人的期待，找到真正的自我。”    
 > "All our life, we are about to get rid of the expectations of others to find the true self. "     
 
-好啦，这就是全部的我了。南荒北逃，Thingamabob，Lydia，哦对然后，杨煜行，都是我。
+好啦，这就是全部的我了。南荒北逃，Thingamabob，Lydia，都是我。
 
 欢迎来到我的世界:)
 

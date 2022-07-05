@@ -34,8 +34,17 @@ theme:
 
 # 导航栏
 nav:
-  - 技术栈:
+  - 野生技术宅:
     - zh/tech/index.md
+    - 技能点列表: 
+      - zh/tech/技能点列表.md
+    # - 奇奇怪怪，没有脑袋: 
+    - 学习笔记: 
+      - zh/tech/Notes/index.md
+      - 软件部暑培: 
+        - Lecture1-Linux: zh/tech/Notes/软件部暑培/lecture1.md
+
+
   - 你来人间一趟: 
     - zh/art/index.md
     - 诗人怀着敢想敢梦的心，到远方去: #诗作和短文 
@@ -142,7 +151,6 @@ nav:
     - zh/me/index.md
     - 个人履历: zh/me/cv.md
     - 社交平台: zh/me/socialmedia.md
-    
   - 来日方长: 
     - zh/future/index.md
 
@@ -163,7 +171,13 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true 
 
+      
 extra_javascript:
   # latex支持
   # check https://squidfunk.github.io/mkdocs-material/reference/mathjax/?h=math for more information
@@ -185,4 +199,3 @@ extra:
       lang: zh
 
 
-      

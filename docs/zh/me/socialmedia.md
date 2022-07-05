@@ -12,7 +12,7 @@ Gmail: lydia.yxyang@gmail.com
 
 平时主要功能是学习，和看猫猫
 
-[![](card/bilibili.png)](https://space.bilibili.com/494966799)
+[![](card/bilibili.png)](https://space.bilibili.com/494966799#pic_center=20x)
 
 ### :fontawesome-brands-instagram: Instagram
 最近才想起来自己有ig

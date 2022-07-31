@@ -45,6 +45,12 @@ nav:
         - Lecture2-Git: zh/tech/Notes/软件部暑培/lecture2.md
         - Lecture3-C#: zh/tech/Notes/软件部暑培/lecture3.md
         - Lecture4-多线程: zh/tech/Notes/软件部暑培/lecture4.md
+        - Lecture5-Cmake: zh/tech/Notes/软件部暑培/lecture5.md
+        - Lecture6-Arts of Programming: zh/tech/Notes/软件部暑培/lecture6.md
+      - MR:
+        - 标定/Calibration: zh/tech/Notes/MR/calibration.md 
+        - 定位/Localization: zh/tech/Notes/MR/localization.md 
+        
   - 你来人间一趟: 
     - zh/art/index.md
     - 诗人怀着敢想敢梦的心，到远方去: #诗作和短文 

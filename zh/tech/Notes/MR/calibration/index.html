@@ -522,6 +522,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_1_3_3">
@@ -766,6 +770,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    注意事项⚠️⚠️一些坑
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -783,6 +794,34 @@
     <li class="md-nav__item">
       <a href="../localization/" class="md-nav__link">
         定位/Localization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comparison/" class="md-nav__link">
+        MATLAB&OpenCV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opencv/" class="md-nav__link">
+        Opencv
       </a>
     </li>
   
@@ -2772,6 +2811,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    注意事项⚠️⚠️一些坑
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2929,6 +2975,30 @@ H=A(R1 R2 t)  <br />
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="n">cv</span><span class="o">.</span><span class="n">calibrateCamera</span><span class="p">(</span> <span class="n">objectPoints</span><span class="p">,</span> <span class="n">imagePoints</span><span class="p">,</span> <span class="n">imageSize</span><span class="p">,</span> <span class="n">cameraMatrix</span><span class="p">,</span><span class="n">distCoeffs</span><span class="p">[,</span> <span class="n">rvecs</span><span class="p">[,</span> <span class="n">tvecs</span><span class="p">[,</span> <span class="n">flags</span><span class="p">[,</span><span class="n">criteria</span><span class="p">]]]]</span>
 </code></pre></div></p>
+<p><a href="https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html">OpenCV官网</a></p>
+<h2 id="_21">注意事项⚠️⚠️一些坑<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>保持相机光轴和标定板法向之间的夹角处于15°~ 70°之间</p>
+</li>
+<li>
+<p>标定图片在20张左右；</p>
+</li>
+<li>标定过程不能过曝；</li>
+<li>标定过程不能改变光圈和焦距；</li>
+<li>标定要覆盖整个测量空间及测量视场。</li>
+<li>用棋盘格标定的过程中，角点提取的精度受噪声和图像质量影响较大，而圆形特征对噪声的抑制性比较强，且识别率比较高，因此圆形特征在视觉系统中发挥着重要的作用。</li>
+<li>标定板的图像应尽量覆盖整个视野的１／２左右，并且标定图片一般以20张左右为宜，实验证明，图片太多会导致参数优化的结果变差。</li>
+<li>照片数量：标定板特征点数目越多，同一张图片的信息量越大，需要的图片数量相应就少。</li>
+<li>标定板网格大小对标定精度影响：随着棋盘格尺寸增大，其标定的误差相应增大。较之小尺寸的棋盘格，大尺寸的误差成倍增加。其原因是棋盘格越 大，则镜头畸变引起的距离测量误差增大，从而导致标定的重投影误差增大。根据相机畸变系数大小制作精度高与棋盘格尺寸相对较小的靶标可有效地提高相机标定的精度。【相机标定的外界影响因素分析_支健辉】</li>
+<li>特征点数量对标定精度影响：当标定板单位网格长度一定时，特征点数量对有效焦距的影响有限。</li>
+<li>在标定算法确定的情况下，影响相机标定的因素主要来自相机本身以及光照、标定板规格、标定图像数量、标定物摆放位置、图像噪声等外界环境。（以下结论针对棋盘标定板而言）</li>
+<li>在张氏标定法中，标定图像数量在20张左右为宜，相机有效焦距相对稳定，重投影残差相对较小。</li>
+<li>在相机视场范围内，当特征点个数为110个，单位网格长度在6～14ｍｍ之间时，获得的有效焦距最稳定；当棋盘网格单位长度为10ｍｍ 时，棋盘标定板上的特征点应保证在150个以内，此时主点坐标获取稳定。</li>
+<li>棋盘标定板对于图像噪声有一定的抗干扰性。重投影点误差与噪声方差基本呈正比例放大。</li>
+<li>结构光视觉系统误差分析：测量误差与特征提取误差成正比，特征提取误差越大，测量误差越大，反之亦然; 摄像机光轴与投影仪光轴之间的夹角对 Z 轴存在明显影响，当夹角小于45°时，Z 轴误差随着夹角的减小而急剧增大; 当夹角大于 45°时，随着夹角的增大而缓慢减小，但是如果夹角α太大，则标定精度又大幅下降，因此夹角不能太小而又不宜太大，通常选取45°左右。测量物距对测量误差的影响是线性的，测量物距越大，测量误差随之增大; 摄像机焦距与测量误差成反比，摄像机焦距越大，测量误差越小，精度越高。</li>
+</ul>
+<p>原文链接：https://blog.csdn.net/weixin_48934707/article/details/124295140</p>
 
               
             </article>

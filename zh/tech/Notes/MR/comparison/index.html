@@ -526,6 +526,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_1_3_3">
@@ -712,6 +716,34 @@
     <li class="md-nav__item">
       <a href="../opencv/" class="md-nav__link">
         Opencv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eigen/" class="md-nav__link">
+        Eigen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../winrt/" class="md-nav__link">
+        Winrt
       </a>
     </li>
   
@@ -2624,23 +2656,31 @@
 <span class="k">function</span><span class="w"> </span><span class="nf">[cxy, c45, Ix, Iy, Ixy, I_45_45] = secondDerivCornerMetric</span><span class="p">(</span>I, sigma, highDistortion<span class="p">)</span><span class="w"></span>
 </code></pre></div>
 思路概述：
-- 高度失真和普通图像的处理方式有所差异，体现在关键参数不同、某些步骤在高度失真的图像上会重复进行
-- 先做一个高斯低通滤波（效果直观上看是模糊）
-- 用二阶微分器滤波，作用是把明暗交界处提取出来。对低失真图片先做x轴、再做y轴的连续微分，从而把拐点（即既是x方向的明暗交界也是y方向的明暗交界）提取出来；对高失真图片做0、45、90、-45度的二阶微分，并做一些叠加操作，从而提取出角点。两者最后都需要进行腐蚀操作把不是corner的亮点去除。
-- 使用阈值法选出最亮的点作为角点的坐标。</p>
+- 高度失真和普通图像的处理方式有所差异，体现在关键参数不同、某些步骤在高度失真的图像上会重复进行</p>
+<ul>
+<li>
+<p>先做一个高斯低通滤波（效果直观上看是模糊）</p>
+</li>
+<li>
+<p>用二阶微分器滤波，作用是把明暗交界处提取出来。对低失真图片先做x轴、再做y轴的连续微分，从而把拐点（即既是x方向的明暗交界也是y方向的明暗交界）提取出来；对高失真图片做0、45、90、-45度的二阶微分，并做一些叠加操作，从而提取出角点。两者最后都需要进行腐蚀操作把不是corner的亮点去除。</p>
+</li>
+<li>
+<p>使用阈值法选出最亮的点作为角点的坐标。</p>
+</li>
+</ul>
 <p>1）低通滤波</p>
 <p>用fspecial函数生成了一个大小为[sigma]*[sigma]，标准差为sigma的高斯低通滤波器，并将其视作卷积核对图像进行卷积，这一步的作用是低通滤波</p>
 <p>此处的sigma，如果勾选了highDistortion（高失真），则设置为1.5；反之设置为2。在高失真的情况下，更低的标准差（sigma）可以减少平滑，这是为了减少特征的损失。如果第一次检测没有测到角点，则把sigma设置为4。</p>
 <p>实际上所谓低通滤波就是“模糊”。</p>
-<p>原图
-<img alt="" src="../img/origin.png" />
-Sigma=1.5
-<img alt="" src="../img/sigma15.png" />
-Sigma=2
-<img alt="" src="../img/sigma20.png" />
-Sigma=4
-<img alt="" src="../img/sigma40.png" />
-2）二阶微分滤波 derivFilter</p>
+<p>原图</p>
+<p><img alt="" src="../img/origin.png" /></p>
+<p>Sigma=1.5</p>
+<p><img alt="" src="../img/sigma15.png" /></p>
+<p>Sigma=2</p>
+<p><img alt="" src="../img/sigma20.png" /></p>
+<p>Sigma=4</p>
+<p><img alt="" src="../img/sigma40.png" /></p>
+<p>2）二阶微分滤波 derivFilter</p>
 <p>接着是二阶微分过滤器。微分滤波器对图像亮度急剧变化的边缘有提取效果，可以获得邻接像素的差值。</p>
 <p>可以通过卷积核[-1 0 1]与图像卷积实现。</p>
 <p>y方向微分
@@ -2662,22 +2702,46 @@ x方向微分
 <p>4）找到确定的像素</p>
 <p>最后在经过一个findsubpixel的步骤，得到所有corner和棋盘大小。</p>
 <h3 id="_1">标定算法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>MATLAB
-1. 求H（单应性矩阵，即内参矩阵和外参矩阵的乘积）
-假设失真系数 skew为0，则cx、cy为图像中点，也就是相机感光板中心在像素坐标系下的坐标，初始假设 cx = (imageSize(2)-1)/2 ; cy = (imageSize(1)-1)/2;
-2. 求焦距fx,fy，原理：https://imkaywu.github.io/blog/2017/10/focal-from-homography/
-3. 使用cx,cy,fx,fy和skew构建内参矩阵 [fx, skew, cx; 0, fy, cy; 0, 0, 1];
-4. 接着计算V矩阵、B矩阵和内参矩阵（A）： V = computeV(H)、B = computeB(V)、 A = computeIntrinsics(B);
-5. 然后再计算外参 [rvecs, tvecs] = computeExtrinsics(A, H);
-6. 返回参数结构体</p>
+<p>MATLAB</p>
+<ol>
+<li>
+<p>求H（单应性矩阵，即内参矩阵和外参矩阵的乘积）
+假设失真系数 skew为0，则cx、cy为图像中点，也就是相机感光板中心在像素坐标系下的坐标，初始假设 cx = (imageSize(2)-1)/2 ; cy = (imageSize(1)-1)/2;</p>
+</li>
+<li>
+<p>求焦距fx,fy，原理：https://imkaywu.github.io/blog/2017/10/focal-from-homography/</p>
+</li>
+<li>
+<p>使用cx,cy,fx,fy和skew构建内参矩阵 [fx, skew, cx; 0, fy, cy; 0, 0, 1];</p>
+</li>
+<li>
+<p>接着计算V矩阵、B矩阵和内参矩阵（A）： V = computeV(H)、B = computeB(V)、 A = computeIntrinsics(B);</p>
+</li>
+<li>
+<p>然后再计算外参 [rvecs, tvecs] = computeExtrinsics(A, H);</p>
+</li>
+<li>
+<p>返回参数结构体</p>
+</li>
+</ol>
 <h2 id="opencv">OpenCV<a class="headerlink" href="#opencv" title="Permanent link">&para;</a></h2>
 <p>REF：https://www.douban.com/note/541379633/?from=tag&amp;_i=9676166HvBL1B1</p>
 <h3 id="findchessboardcorners">找角点 findChessboardCorners<a class="headerlink" href="#findchessboardcorners" title="Permanent link">&para;</a></h3>
-<p>思路概述
-- 用自适应阈值的方法对图像进行二值化，使得图像的直方图比较均衡，从而减轻亮度不均匀的影响
-- 对白色部分进行膨胀，从而切断黑色部分的连接
-- 检测四边形，计算每个轮廓的凸包，多边形检测，以及判断是否只有四个顶点，若是则为四边形，再用长宽比、周长和面积等约束去除一些干扰四边形
-- 将每个四边形作为一个单元，它分别有邻近的四边形，无邻近四边形的为干扰四边形，两个邻近四边形为边界处四边形，四个邻近四边形为内部四边形。每个四边形的序号可按邻近关系排序，然后按对角两个四边形相对的两个点，取其连线的中间点作为角点</p>
+<p>思路概述</p>
+<ul>
+<li>
+<p>用自适应阈值的方法对图像进行二值化，使得图像的直方图比较均衡，从而减轻亮度不均匀的影响</p>
+</li>
+<li>
+<p>对白色部分进行膨胀，从而切断黑色部分的连接</p>
+</li>
+<li>
+<p>检测四边形，计算每个轮廓的凸包，多边形检测，以及判断是否只有四个顶点，若是则为四边形，再用长宽比、周长和面积等约束去除一些干扰四边形</p>
+</li>
+<li>
+<p>将每个四边形作为一个单元，它分别有邻近的四边形，无邻近四边形的为干扰四边形，两个邻近四边形为边界处四边形，四个邻近四边形为内部四边形。每个四边形的序号可按邻近关系排序，然后按对角两个四边形相对的两个点，取其连线的中间点作为角点</p>
+</li>
+</ul>
 <p><div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="n">findChessboardCorners</span><span class="p">(</span><span class="n">InputArray</span><span class="w"> </span><span class="n">image_</span><span class="p">,</span><span class="w"> </span><span class="n">Size</span><span class="w"> </span><span class="n">pattern_size</span><span class="p">,</span><span class="n">OutputArray</span><span class="w"> </span><span class="n">corners_</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">flags</span><span class="p">)</span><span class="w"> </span><span class="err">@</span><span class="n">https</span><span class="o">:</span><span class="c1">//github.com/opencv/opencv/blob/4.x/modules/calib3d/src/calibinit.cpp</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">cvFindChessboardCorners</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">CvSize</span><span class="w"> </span><span class="n">pattern_size</span><span class="p">,</span><span class="w"></span>

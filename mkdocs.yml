@@ -164,7 +164,6 @@ nav:
 plugins:
   - tags # 给单篇文章添加标签 https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/?h=tags
   - search #添加站点搜索
-  - macros
 markdown_extensions:
   - pymdownx.arithmatex: # latex支持
       generic: true

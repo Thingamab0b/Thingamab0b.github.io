@@ -38,6 +38,7 @@ nav:
     - zh/tech/index.md
     - 技能点列表: zh/tech/技能点列表.md
     # - 奇奇怪怪，没有脑袋: 
+    - 毕业论文 - 基于增强现实的术前规划协作交互系统: zh/tech/Notes/基于增强现实的术前规划协作交互系统.pdf
     - 学习笔记: 
       - 计算机结构: zh/tech/Notes/计算机结构.md 
       - 软件部暑培: 
@@ -162,6 +163,8 @@ nav:
 # [Extensions]
 plugins:
   - tags # 给单篇文章添加标签 https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/?h=tags
+  - search #添加站点搜索
+  - macros
 markdown_extensions:
   - pymdownx.arithmatex: # latex支持
       generic: true

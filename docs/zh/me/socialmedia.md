@@ -1,8 +1,6 @@
 # 社交平台账号
 
 ### :octicons-mail-16: Mail
-学校邮箱/工作邮箱: yx-yang19@mails.tsinghua.edu.cn
-
 个人邮箱: yuxing_young@163.com
 
 Gmail: lydia.yxyang@gmail.com

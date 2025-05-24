@@ -1,5 +1,6 @@
 # 个人履历
 > Updated on 20 May 2025    
+
 > Created on 20 July 2022       
 ## 基本信息
 🤵🏻‍♀️ 姓名：杨煜行     
@@ -20,10 +21,22 @@
 📅 交换时间：2022.1-2022.3		   
 ⛪️ 交换院系：工程学院
 
+## 论文
+[毕业设计：基于增强现实的术前规划协作交互系统](docs/zh/tech/Notes/基于增强现实的术前规划协作交互系统.pdf)
+
+[3D Slicer-AR-Bridge: 3D Slicer AR Connection for Medical Image Visualization and Interaction with AR-HMD. ](https://www.researchgate.net/publication/376214586_3D_Slicer-AR-Bridge_3D_Slicer_AR_Connection_for_Medical_Image_Visualization_and_Interaction_with_AR-HMD)
+IEEE International Symposium on Mixed and Augmented Reality Adjunct
+
+[EVD Surgical Guidance with Retro-Reflective Tool Tracking and Spatial Reconstruction using Head-Mounted Augmented Reality Device.](https://www.researchgate.net/publication/387116666_EVD_Surgical_Guidance_with_Retro-Reflective_Tool_Tracking_and_Spatial_Reconstruction_using_Head-Mounted_Augmented_Reality_Device) IEEE Transactions on Visualization and Computer Graphics
+
+
+[Inside-Out Accurate Head Tracking with Head-Mounted Augmented Reality Device.](https://www.researchgate.net/publication/378486600_Inside-Out_Accurate_Head_Tracking_with_Head-Mounted_Augmented_Reality_Device) IFMBE proceedings
+
+
 ## 工作经历
-🏢 单位名称：追觅科技
-👩🏻‍💻 职位：海外GTM
-📅 在职时间：2023.07-2024.03
+🏢 单位名称：追觅科技   
+👩🏻‍💻 职位：海外GTM    
+📅 在职时间：2023.07-2024.03    
 
 👩🏻‍💻 副业：IGCSE/Alevel/DSE 数英物化生老师
 

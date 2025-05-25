@@ -89,7 +89,7 @@ $(function () {
         var _this = $(this);
         imgShow("#outerdiv", "#innerdiv", "#bigimg", _this);
     })  
-    $.getJSON('./data/config.json', function (data) {
+    $.getJSON('../data/config.json', function (data) {
         initMap(data)
     })
 });

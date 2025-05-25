@@ -194,17 +194,10 @@ extra_javascript:
   - mkdocs/javascripts/mathjax.js
   #- https://cdn.polyfill.io/v2/polyfill.min.js #https://polyfill-fastly.io/v2/polyfill.min.js # https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js # https://cdn.bytedance.com/?query=mathjax&version=3.2.0
-  - mkdocs/javascripts/index.js
-  - mkdocs/javascripts/jquery-1.9.1.min.js
-  - mkdocs/javascripts/jquery-jvectormap-2.0.5.min.js
- # - mkdocs/javascripts/jquery-jvectormap-cn-merc-en.js
-  #- mkdocs/javascripts/jquery-jvectormap-world.js
 
 extra_css:
   - mkdocs/css/no-footer.css # 不使用底部的翻页
   - mkdocs/css/unordered-list-symbols.css # multiplt unordered list symbols
-  - mkdocs/css/index.css
-  - mkdocs/css/jquery-jvectormap-2.0.5.css
 
 
 extra:

@@ -34,7 +34,14 @@ $(function () {
                     stroke: '#fff',
                 },
             },
-            markers: [...data],
+            markers: data.map(function (place) {
+                if (place.markerShape === 'heart') {
+                    return $.extend({}, place, {
+                        style: { image: '../images/marker-heart.svg' }
+                    });
+                }
+                return place;
+            }),
             series: {
                 markers: [{
                     attribute: 'r',
@@ -138,9 +145,9 @@ function imgShow(outerdiv, innerdiv, bigimg, _this) {
 // 图片宽度自适应
 document.addEventListener("DOMContentLoaded", function() {
     var photos = document.querySelectorAll('.info_bar_photo');
-    if (photos[0].length === 1) {
+    if (photos.length === 1) {
         // 如果只有一张图片，设置宽度为90%
-        photos.style.width = '90%';
+        photos[0].style.width = '90%';
     } else if (photos.length >= 2) {
         // 如果图片张数大于等于两张，设置宽度为45%
         photos.forEach(function(photo) {

@@ -305,6 +305,7 @@
     {
         "latLng": [34.62, 112.45],
         "name": "河南 · 洛阳",
+        "markerShape": "heart",
         "desc": "2024年中秋",
         "freq": 1
     },
@@ -324,12 +325,14 @@
     {
         "latLng": [36.10, 110.68],
         "name": "山西 · 临汾",
+        "markerShape": "heart",
         "desc": "2024年劳动节，壶口瀑布，小西天",
         "freq": 1
     },
     {
         "latLng": [37.52, 111.13],
         "name": "山西 · 吕梁",
+        "markerShape": "heart",
         "desc": "2024年劳动节",
         "freq": 1
     },
@@ -379,36 +382,42 @@
     {
         "latLng": [41.80, 123.43],
         "name": "辽宁 · 沈阳",
+        "markerShape": "heart",
         "desc": "2026/7，去泡澡",
         "freq": 1
     },
     {
         "latLng": [38.91, 121.61],
         "name": "辽宁 · 大连",
+        "markerShape": "heart",
         "desc": "26年9月",
         "freq": 1
     },
     {
         "latLng": [43.95, 116.08],
         "name": "内蒙 · 锡林郭勒",
+        "markerShape": "heart",
         "desc": "2024年看极光",
         "freq": 1
     },
     {
         "latLng": [40.99, 113.13],
         "name": "内蒙 · 乌兰察布",
+        "markerShape": "heart",
         "desc": "26年7月草原旅行",
         "freq": 1
     },
     {
         "latLng": [40.84, 111.75],
         "name": "内蒙 · 呼和浩特",
+        "markerShape": "heart",
         "desc": "26年7月草原旅行",
         "freq": 1
     },
     {
         "latLng": [40.66, 109.84],
         "name": "内蒙 · 包头",
+        "markerShape": "heart",
         "desc": "26年7月草原旅行",
         "freq": 1
     },
@@ -421,24 +430,28 @@
     {
         "latLng": [43.80, 87.62],
         "name": "新疆 · 乌鲁木齐",
+        "markerShape": "heart",
         "desc": "2024年国庆",
         "freq": 1
     },
     {
         "latLng": [45.60, 84.87],
         "name": "新疆 · 克拉玛依",
+        "markerShape": "heart",
         "desc": "2024年国庆",
         "freq": 1
     },
     {
         "latLng": [42.95, 89.18],
         "name": "新疆 · 吐鲁番",
+        "markerShape": "heart",
         "desc": "2024年国庆",
         "freq": 1
     },
     {
         "latLng": [43.48, 84.00],
         "name": "新疆 · 伊犁",
+        "markerShape": "heart",
         "desc": "2024年国庆",
         "freq": 1
     },
@@ -446,6 +459,7 @@
     {
         "latLng": [41.73, 86.15],
         "name": "新疆 · 巴音郭楞",
+        "markerShape": "heart",
         "desc": "2024年国庆",
         "freq": 1
     },
@@ -453,6 +467,7 @@
     {
         "latLng": [39.47, 75.98],
         "name": "新疆 · 喀什",
+        "markerShape": "heart",
         "desc": "2024年国庆",
         "freq": 1
     },
@@ -460,6 +475,7 @@
     {
         "latLng": [47.85, 88.13],
         "name": "新疆 · 阿勒泰",
+        "markerShape": "heart",
         "desc": "2024年国庆",
         "freq": 1
     },
@@ -467,6 +483,7 @@
     {
         "latLng": [55.7517, 37.6178],
         "name": "俄罗斯 · 莫斯科",
+        "markerShape": "heart",
         "desc": "2025年春节",
         "freq": 1
     },
@@ -474,6 +491,7 @@
     {
         "latLng": [59.9386, 30.3141],
         "name": "俄罗斯 · 圣彼得堡",
+        "markerShape": "heart",
         "desc": "2025年春节",
         "freq": 1
     },
@@ -481,6 +499,7 @@
     {
         "latLng": [68.9815, 33.0724],
         "name": "俄罗斯 · 摩尔曼斯克",
+        "markerShape": "heart",
         "desc": "2025年春节",
         "freq": 1
     },
@@ -530,30 +549,35 @@
     {
         "latLng": [38.9325, 100.4555],
         "name": "甘肃 · 张掖",
+        "markerShape": "heart",
         "desc": "2025年国庆",
         "freq": 1
     },
     {
         "latLng": [39.7325, 98.4938],
         "name": "甘肃 · 酒泉",
+        "markerShape": "heart",
         "desc": "2025年国庆",
         "freq": 1
     },
     {
         "latLng": [40.1421, 94.6614],
         "name": "甘肃 · 敦煌",
+        "markerShape": "heart",
         "desc": "2025年国庆",
         "freq": 1
     },
     {
         "latLng": [37.3697, 97.3608],
         "name": "青海 · 海西",
+        "markerShape": "heart",
         "desc": "2025年国庆",
         "freq": 1
     },
     {
         "latLng": [36.6171, 101.7782],
         "name": "青海 · 西宁",
+        "markerShape": "heart",
         "desc": "2025年国庆",
         "freq": 1
     },

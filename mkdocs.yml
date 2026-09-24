@@ -38,7 +38,7 @@ nav:
     - zh/tech/index.md
     - 技能点列表: zh/tech/技能点列表.md
     # - 奇奇怪怪，没有脑袋: 
-    - 毕业论文 - 基于增强现实的术前规划协作交互系统: zh/tech/Notes/基于增强现实的术前规划协作交互系统.pdf
+    - 毕业论文 - 基于增强现实的术前规划协作交互系统: zh/tech/thesis.md
     - 房车日记: zh/tech/RV/房车日记.md
     - 学习笔记: 
       - 计算机结构: zh/tech/Notes/计算机结构.md 
@@ -55,7 +55,7 @@ nav:
       - 经济学原理: zh/tech/Notes/经济学原理.md
   - 你来人间一趟: 
     - zh/art/index.md
-    - 作品集: zh/art/作品集.pdf
+    - 作品集: zh/art/portfolio.md
     - 诗人怀着敢想敢梦的心，到远方去: #诗作和短文 
       - zh/art/poem/index.md
       - 2016/8/4: zh/art/poem/20160804.md
@@ -159,7 +159,6 @@ nav:
   - 我与这个世界: 
     - zh/me/index.md
     - 个人履历: zh/me/cv.md
-    - 社交平台: zh/me/socialmedia.md
     - 足迹: zh/me/footprint.md
 
 
@@ -189,6 +188,7 @@ markdown_extensions:
 
       
 extra_javascript:
+  - mkdocs/javascripts/document-reader.js
   # latex支持
   # check https://squidfunk.github.io/mkdocs-material/reference/mathjax/?h=math for more information
   # notice `curl https://polyfill.io/v3/polyfill.min.js?features=es6 > docs/mkdocs/javascripts/polyfill.min.js && curl https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js > docs/mkdocs/javascripts/tex-mml-chtml.js` not works... because there are other resources that need to load
@@ -197,6 +197,7 @@ extra_javascript:
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js # https://cdn.bytedance.com/?query=mathjax&version=3.2.0
 
 extra_css:
+  - mkdocs/css/document-reader.css
   - mkdocs/css/no-footer.css # 不使用底部的翻页
   - mkdocs/css/unordered-list-symbols.css # multiplt unordered list symbols
 
@@ -210,5 +211,4 @@ extra:
     - name: Chinese
       link: /zh/
       lang: zh
-
 

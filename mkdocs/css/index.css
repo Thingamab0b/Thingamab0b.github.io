@@ -1,0 +1,139 @@
+#map{
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#info_bar{
+    margin-top: 80px;
+    /* height: calc(100% - 80px); */
+    height: auto;
+    width: 25%; 
+    min-width: 240px; 
+    position: absolute; 
+    left: 0; 
+    bottom: 0; 
+    background: rgba(250, 250, 250, 0.8);
+    padding: 15px; 
+    z-index: 100;
+    border-radius: 0 8px 8px 0;
+    display: none;
+}
+
+
+#info_bar_paper{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: solid 1.5px silver;
+    overflow: scroll;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#info_bar_close_btn{
+    z-index: 201;
+    cursor: pointer;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+}
+
+#info_bar_title{
+    cursor: default;
+    position: relative;
+    height: 35px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: x-large;
+    border-bottom: solid silver 2px;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    font-weight: 550;
+}
+
+#info_bar_desc{
+    cursor: default;
+    position: relative;
+    padding: 8px;
+    font-size: 0.9em;
+    margin: 0;
+    width: calc(100% - 16px);
+    bottom: 0;
+    white-space: pre-line;
+    overflow:auto;
+    font-family:courier;
+    background: linear-gradient(to right, green, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#info_bar_photos{
+    position: relative;
+    padding: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info_bar_photo{
+    cursor: pointer;
+    position: relative;
+    min-width: 100px;
+    min-height: 100px;
+    margin: 5px;
+    height: 45%; /* 使用auto来保持图片比例 */
+    width: 45%; /* 默认宽度为45% */
+    object-fit: scale-down;
+}
+
+/* 当图片数量为1或2张时，设置宽度为90% */
+#info_bar_photos > .info_bar_photo {
+    counter-increment: photo-count; /* 增加计数器 */
+}
+/* 当图片数量大于等于3张时，保持默认宽度45% */
+#info_bar_photos > .info_bar_photo:nth-child(1):nth-last-child(1),
+#info_bar_photos > .info_bar_photo:nth-child(1):nth-last-child(2),
+#info_bar_photos > .info_bar_photo:nth-child(2):nth-last-child(1) {
+    width: 90%;
+}
+
+#outerdiv{
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.7);
+    z-index:200;
+    width:100%;
+    height:100%;
+    display:none;
+}
+
+#innerdiv{
+    position:absolute;
+}
+
+#bigimg{
+    border:5px solid #fff;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-corner{
+    border-radius: 8px;
+}
+::-webkit-scrollbar-button{
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgba(240,240,240,0.95);
+}

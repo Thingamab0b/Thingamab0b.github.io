@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% from 'project-macros.html' import figure, heading %}
+{% block content %}
+<main id="main" class="case-content wrap" data-node-id="{{ '1:200' if project.slug == 'sleep-pod' else '1:419' }}">
+  <header class="case-intro"><div class="case-meta"><a href="/#projects">← ALL PROJECTS</a><span>{{project.date}}</span></div><h1>{{project.title|linebreaks}}</h1><p class="case-lead">{{project.lead|linebreaks}}</p><p class="case-tags">{{project.tags}}</p></header>
+  <section class="case-section" id="overview">{{heading('00 / OVERVIEW','项目概览')}}
+    {{figure(project.cover,'图片待补充 · 建议 2:1',project.coverCaption,504,true,project.coverSrc,project.coverAlt,project.coverFit or 'contain',project.coverSize)}}
+    <dl class="case-description"><div><dt>项目要解决什么</dt><dd>{{project.brief}}</dd></div><div><dt>我负责什么</dt><dd>{{project.role}}</dd></div></dl>
+    <nav class="case-contents" aria-label="项目内容导航">{% for section in project.sections %}<a href="#{{section.anchor}}"><span>0{{loop.index}}</span>{{section.title}} <span aria-hidden="true">↓</span></a>{% endfor %}<a href="#results"><span>04</span>结果与复盘 <span aria-hidden="true">↓</span></a></nav>
+  </section>
+  {% if project.slug == 'sleep-pod' %}<a href="/projects/sleep-pod/experience/" class="case-experience-link"><strong>看一次真实体验 <span aria-hidden="true">↗</span></strong><span>现场动作 × 屏幕反馈 · 分阶段播放</span></a>{% endif %}
+  {% for section in project.sections %}
+  <section class="case-section" id="{{section.anchor}}">{{heading(section.num,section.title)}}
+    <p class="case-section-intro">{{section.intro}}</p>
+    {% for asset in section.designAssets %}{{figure(asset.label,'',asset.caption,328,true,asset.src,asset.alt,'contain',asset.size,true)}}{% endfor %}
+    {% if section.steps %}<ol class="case-steps">{% for step in section.steps %}<li><span class="eyebrow">0{{loop.index}}</span><h3>{{step[0]}}</h3><p>{{step[1]}}</p></li>{% endfor %}</ol>{% endif %}
+    {% if section.sourceGallery %}<details class="case-source-gallery"><summary>{{section.sourceGallery}}</summary><div class="case-source-content">{% endif %}
+    {% if section.wide %}{{figure(section.wide.label,section.wide.hint,section.wide.caption,section.wide.h,true,section.wide.src,section.wide.alt,section.wide.fit or 'contain',section.wide.size)}}{% endif %}
+    {% if section.pair %}<div class="figure-pair">{% for img in section.pair %}{{figure(img.label,img.hint,img.caption,328,false,img.src,img.alt,img.fit or 'contain',img.size)}}{% endfor %}</div>{% endif %}
+    {% if section.sourceGallery %}</div></details>{% endif %}
+    {% if section.delivery %}<div class="case-delivery">{{figure(section.delivery.label,'',section.delivery.caption,328,false,section.delivery.src,section.delivery.alt,'contain',section.delivery.size)}}<div class="delivery-checklist"><p class="eyebrow">SETUP & HANDOVER</p><h3>从设计方案，到现场可执行</h3><ol>{% for title,body in section.delivery.checklist %}<li><strong>{{title}}</strong><p>{{body}}</p></li>{% endfor %}</ol></div></div>{% endif %}
+    {% if section.rows %}<dl class="case-description">{% for label,body in section.rows %}<div><dt>{{label}}</dt><dd>{{body}}</dd></div>{% endfor %}</dl>{% endif %}
+    {% if section.note %}<aside class="case-note"><h3>{{section.note[0]}}</h3><p>{{section.note[1]}}</p></aside>{% endif %}
+  </section>
+  {% endfor %}
+  <section class="case-section" id="results">{{heading('04 / OUTCOME',project.outcomeTitle)}}
+    <dl class="outcomes {{ 'compact-metrics' if project.slug == 'landing-page' }}">{% for value,label in project.metrics %}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{% endfor %}</dl>
+    <p>{{project.outcome}}</p>{% if project.disclaimer %}<p class="data-note">{{project.disclaimer}}</p>{% endif %}
+  </section>
+  <a class="next-project" href="/projects/{{project.nextSlug}}/"><p class="eyebrow">NEXT PROJECT</p><h2>{{project.nextTitle}} <span aria-hidden="true">↗</span></h2><p>{{project.nextDesc}}</p></a>
+</main>
+<dialog class="image-dialog" aria-label="项目图片大图"><button class="image-dialog-close" type="button" aria-label="关闭大图">关闭 ×</button><img alt=""><p></p></dialog>
+{% endblock %}

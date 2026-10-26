@@ -1,0 +1,49 @@
+/* Sleepal case study — Figma 1:200, updated 2026-10-21. */
+.sleep-pod-case{gap:30px}
+.sleep-pod-case .case-intro{gap:20px}
+.sleep-pod-case .case-intro h1{font-size:60px;line-height:94px;letter-spacing:-1px}
+.sleep-pod-case .case-lead{font-family:Outfit,'Resource Han Rounded CN',sans-serif;font-weight:400;max-width:none;color:var(--muted)}
+.pod-section-title{font-size:28px;line-height:36px;font-weight:500;color:var(--ink)}
+.pod-overview-images{display:grid;grid-template-columns:478fr 509fr;gap:12px;width:calc(100% - 9px);margin:auto}
+.pod-overview-images img{display:block;width:100%;height:auto;object-fit:cover}
+.pod-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;min-height:360px}
+.pod-summary article{min-width:0}
+.pod-summary h3{font-size:18px;line-height:28px;font-weight:500;color:var(--accent);padding-bottom:14px;border-bottom:2px solid #526b5f80;margin-bottom:14px}
+.pod-summary-title{font-size:26px;line-height:36px;font-weight:500;color:var(--ink);margin-bottom:32px}
+.pod-summary-body{font-size:16px;line-height:28px;color:var(--muted)}
+.sleep-pod-case .experience-embedded{width:100%;min-height:0;padding:0 0 44px;gap:21px;margin:0}
+.experience-embedded button,.experience-viewer button{appearance:none;border:0;font-family:inherit;cursor:pointer}
+.experience-embedded .experience-heading p{margin-top:10px;font-size:18px;line-height:28.8px}
+.experience-embedded .experience-timeline{margin-top:0;width:100%;margin-left:14.6%}
+.experience-embedded .paired-media{margin-top:9px;margin-bottom:50px}
+.experience-embedded .experience-explanation{margin-top:0}
+.sleep-pod-case .case-section-intro{max-width:100%}
+.pod-decision-feature{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:36px;border-radius:16px;background:#ebf0eb}
+.pod-decision-story{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.pod-challenge-label{font-size:15px;line-height:24px;color:var(--accent);font-weight:500}
+.pod-decision-story h3{font-size:30px;line-height:1.4;font-weight:500;letter-spacing:-.5px;color:var(--ink)}
+.pod-decision-story>p:last-child{font-size:16px;line-height:28px;color:var(--muted)}
+.pod-decision-diagram{display:flex;flex-direction:column;gap:16px;min-width:0}
+.pod-observation{display:flex;flex-direction:column;gap:10px;padding-bottom:22px;border-bottom:1px solid #526b5f33}
+.pod-observation>span{font-size:14px;line-height:24px;color:var(--accent)}
+.pod-observation>strong{font-size:23px;line-height:32px;font-weight:500;color:var(--ink)}
+.pod-observation-bar{display:flex;gap:6px;margin-top:2px}
+.pod-observation-bar i{height:8px;flex:1;background:var(--accent);border-radius:4px;opacity:.25}
+.pod-observation-bar i:nth-child(n+3){opacity:.4}.pod-observation-bar i:nth-child(n+5){opacity:.6}.pod-observation-bar i:nth-child(n+7){opacity:.85}
+.pod-demo-duration{display:flex;align-items:center;gap:24px;color:var(--accent)}
+.pod-demo-duration strong{font-family:Outfit,sans-serif;font-size:44px;line-height:52px;font-weight:500;white-space:nowrap}
+.pod-demo-duration span{font-size:14px;line-height:22px}
+.pod-reading-stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;list-style:none;padding:0;margin:0}
+.pod-reading-stages li{padding:10px 4px;border-radius:6px;background:#ffffff90;text-align:center;font-size:14px;line-height:24px;color:var(--accent)}
+.pod-diagram-caption{font-size:13px;line-height:22px;color:var(--muted)}
+.pod-challenges{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.pod-challenge{display:flex;flex-direction:column;gap:12px;padding:28px;border:1px solid #526b5f33;border-radius:12px}
+.pod-challenge h3{font-size:23px;line-height:34px;font-weight:500;color:var(--ink)}
+.pod-challenge-body{font-size:16px;line-height:28px;color:var(--muted);padding-bottom:8px}
+.pod-challenge-path{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:16px;margin-top:auto;border-top:1px solid #526b5f26;color:var(--accent);font-size:14px;line-height:24px}
+.pod-challenge-path b{font-weight:400;opacity:.65}
+@media(max-width:900px){.pod-decision-feature{gap:28px;padding:28px}.pod-decision-story h3{font-size:26px}.pod-challenge{padding:24px}.pod-challenge h3{font-size:21px}.pod-challenge-path{font-size:12px;gap:4px}}
+@media(max-width:639px){.pod-decision-feature{grid-template-columns:1fr;padding:24px;gap:28px}.pod-decision-story h3{font-size:26px}.pod-challenges{grid-template-columns:1fr;gap:16px}.pod-challenge{padding:22px}.pod-challenge h3{font-size:22px}.pod-challenge-path{font-size:13px}.pod-demo-duration strong{font-size:40px}}
+@media(min-width:1024px){.experience-embedded{height:854.17px}.experience-embedded .experience-explanation{margin-top:auto}}
+@media(max-width:1023px){.pod-summary{gap:24px;min-height:0}.pod-summary-title{font-size:22px;line-height:32px;margin-bottom:24px}.pod-summary-body{font-size:15px;line-height:26px}.experience-embedded .experience-timeline{width:100%;margin-left:0}.sleep-pod-case .case-intro h1{font-size:48px;line-height:1.4}}
+@media(max-width:639px){.sleep-pod-case{gap:36px}.sleep-pod-case .case-intro h1{font-size:36px;line-height:1.25}.sleep-pod-case .case-lead{font-size:21px;line-height:30px}.pod-section-title{font-size:24px;line-height:34px}.pod-overview-images{width:100%;grid-template-columns:1fr;gap:16px}.pod-summary{grid-template-columns:1fr;gap:28px}.pod-summary h3{padding-bottom:10px;margin-bottom:12px}.pod-summary-title{font-size:23px;line-height:34px;margin-bottom:16px}.pod-summary-body{font-size:16px;line-height:28px}.sleep-pod-case .experience-embedded{padding-bottom:12px;gap:24px}.experience-embedded .experience-heading p{font-size:15px;line-height:26px}.experience-embedded .experience-explanation{margin-top:0}.sleep-pod-case .figure-pair .image-placeholder{min-height:220px}}

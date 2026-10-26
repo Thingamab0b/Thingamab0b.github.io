@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block extra_head %}
+<link rel="stylesheet" href="/assets/portfolio/sleep-pod.css">
+<link rel="stylesheet" href="/assets/portfolio/sleepal-dashboard.css">
+<script src="/assets/portfolio/sleepal-dashboard.js" defer></script>
+{% endblock %}
+{% block content %}
+<main id="main" class="case-content sleep-pod-case dashboard-case wrap">
+  <header class="case-intro">
+    <div class="case-meta"><a href="/#projects">← ALL PROJECTS</a><span>{{project.date}}</span></div>
+    <h1>Sleepal 数据看板</h1>
+    <p class="case-lead">独立借助 AI，完成从产品定义到全栈交付。</p>
+  </header>
+  <section class="case-section" id="overview">
+    <h2 class="pod-section-title">项目概览</h2>
+    <div class="pod-summary">
+      <article><h3>项目目标</h3><p class="pod-summary-title">把分散的数据，<br>变成可追问的答案</p><p class="pod-summary-body">围绕 Sleepal 预热与众筹，把用户、流量、购买及行为数据放到同一分析入口，帮助比较来源质量、观察转化路径。</p></article>
+      <article><h3>我的职责</h3><p class="pod-summary-title">独立定义产品，<br>用 AI 完成前后端</p><p class="pod-summary-body">从分析问题、指标口径与交互设计，到数据接入、数据库、接口、前端和部署，独立借助 AI 完成，并持续核对与修正。</p></article>
+      <article><h3>项目成果</h3><p class="pod-summary-title">从单次分析报告，<br>到团队日常使用</p><p class="pod-summary-body">上线内部看板，支持多平台数据整合、来源筛选与转化分析。根据同事反馈持续修正，并在后续推进团队维护交接。</p></article>
+    </div>
+  </section>
+
+  <section class="case-section" id="dashboard-experience">
+    <h2 class="pod-section-title">比较不同渠道的表现</h2>
+    <div class="dashboard-demo" data-dashboard-demo>
+      <header class="demo-header"><div><span class="demo-wordmark">Sleepal</span><span>Marketing</span></div><p>演示数据</p></header>
+      <div class="demo-layout">
+        <aside class="demo-sidebar" aria-label="示意界面位置"><p>Kickstarter</p><span>Home</span><span>Traffic</span><span>Funnel</span><strong>KS Behavior</strong><span>Pledger</span><span>Cohort explorer</span></aside>
+        <div class="demo-main">
+          <div class="demo-heading"><h3>渠道质量</h3><button type="button" data-demo-reset>重置筛选</button></div>
+          <div class="demo-controls"><label>来源类别<select id="demo-category"><option value="all">全部来源</option><option value="ads">自有广告</option><option value="kol">KOL</option><option value="platform">KS 平台</option></select></label><label class="demo-toggle"><input id="demo-duration" type="checkbox"><span>平均会话时长 &gt; 1s</span></label></div>
+          <div class="demo-kpis" aria-live="polite" aria-atomic="true"><div><span>当前视图会话</span><strong data-demo-total>3,000</strong></div><div><span>完成页会话</span><strong data-demo-wins>82</strong></div><div><span>完成页比例</span><strong data-demo-rate>2.73%</strong></div></div>
+          <div class="demo-table-wrap"><table class="demo-table" aria-label="各来源渠道表现"><thead><tr><th scope="col">来源</th><th scope="col">会话数</th><th scope="col">跳出率</th><th scope="col">完成页比例</th><th scope="col">会话占比</th></tr></thead><tbody data-demo-rows></tbody></table></div>
+          <noscript><p>启用 JavaScript 后可操作此演示。图中数字均为演示数据。</p></noscript>
+          <div class="demo-detail" aria-live="polite"><div><p data-demo-detail-label>Meta A · 完成页比例</p><strong data-demo-equation>24 ÷ 1,200 = 2.00%</strong></div><p data-demo-detail-copy>完成页会话 ÷ 来源会话</p></div>
+        </div>
+      </div>
+    </div>
+    <p class="data-note">&gt;1s 按 GA4 聚合行的平均会话时长筛选，不等同于逐次会话过滤。</p>
+  </section>
+
+  <section class="case-section" id="product-definition">
+    <h2 class="pod-section-title">先定义团队要回答的问题</h2>
+    <p class="case-section-intro">我将分散在各平台的数据，按团队日常关注的来源、行为和转化重新组织。</p>
+    <div class="dashboard-questions">
+      <article><h3>流量从哪里来？</h3><p>将 ref、UTM 和已有来源标签归为可理解的渠道类别，同时保留原始代码，便于追溯。</p></article>
+      <article><h3>用户有没有认真看？</h3><p>结合参与时长、跳出、滚动和设备等维度，比较不同来源；保留原始数据和筛选后的观察口径。</p></article>
+      <article><h3>在哪一步停止了？</h3><p>把主页面、参与行为、Back、支付与完成页组织成路径视图，再按来源查看各节点。</p></article>
+    </div>
+  </section>
+
+  <section class="case-section" id="independent-build">
+    <h2 class="pod-section-title">一个人，把前后端串起来</h2>
+    <p class="case-section-intro">我定义需求、拆解任务并给出约束，由 AI 执行与试错，再由我核对结果。</p>
+    <div class="dashboard-architecture" aria-label="数据源经过 Python 同步进入 D1，由 API 提供给前端">
+      <article><h3>数据接入</h3><strong>GA4 · Kickstarter<br>Klaviyo · Shopify · Clarity</strong></article>
+      <article><h3>同步与整理</h3><strong>Python</strong></article>
+      <article><h3>存储与接口</h3><strong>D1 + Pages Functions</strong></article>
+      <article><h3>分析界面</h3><strong>Astro + Preact</strong></article>
+    </div>
+    <div class="dashboard-build-notes"><article><h3>把使用需求变成技术约束</h3><p>团队需要每天查看，Clarity 等接口又有限流。我选择定时拉取并保留历史数据，由数据库支持筛选查询，让查看页面不必反复请求来源平台。</p></article><article><h3>让每次修改有核对依据</h3><p>明确数据源、字段、计算口径和界面行为，再让 AI 分步实现。保留原始计数，通过查询校验、构建检查与刷新状态，判断代码是否真正完成了任务。</p></article></div>
+  </section>
+
+  <section class="case-section" id="data-decisions">
+    <h2 class="pod-section-title">把数据口径做准确</h2>
+    <div class="dashboard-decision-list">
+      <article><h3>先加总，再算比例</h3><div><p>跨日期、跨来源先汇总计数，避免直接平均百分比。</p><div class="dashboard-formula">总完成页会话 <span>÷</span> 总会话 <span>=</span> 当前视图完成页比例</div></div></article>
+      <article><h3>把筛选范围说清楚</h3><div><p>类别、来源代码和 &gt;1s 切换会同步影响表格、排序与汇总。让用户知道数字属于当前视图，并能回到全部数据比较。</p></div></article>
+      <article><h3>区分观测值与估算值</h3><div><p>完成页访问、平台归因和实际订单分开呈现。以完成页会话乘以可调客单价得到的数值标为估算营收，避免当成实收。</p></div></article>
+      <article><h3>让更新状态可见</h3><div><p>按数据源提供更新时间，并检查关键表是否刷新。把同步拆成独立任务、对临时接口错误重试，便于定位停在哪一步。</p></div></article>
+    </div>
+  </section>
+
+  <section class="case-section" id="project-evolution">
+    <h2 class="pod-section-title">在团队使用中，把工具做完整</h2>
+    <ol class="dashboard-timeline">
+      <li><time>05.02—05.03</time><div><h3>从报告到可操作的看板</h3><p>先跑通 Klaviyo 数据链路，再接入数据库与接口，构建多平台交互界面。</p></div></li>
+      <li><time>05.08—05.09</time><div><h3>开放给团队使用</h3><p>同事通过企业邮箱验证访问，开始提出想看的维度；看板随后用于官网与众筹漏斗的日常分析。</p></div></li>
+      <li><time>06.12—06.16</time><div><h3>沿着真实反馈修正</h3><p>处理来源分类、日期筛选和提示遮挡等反馈。面对数据波动，回到 GA 后台对照，确认 Direct 是否纳入统计，先对齐范围再解释差异。</p></div></li>
+      <li><time>06 月中下旬</time><div><h3>推进维护交接，继续配合迭代</h3><p>为保证后续响应，推进团队维护交接；继续完善刷新任务，并配合新增引导事件的指标对齐。</p></div></li>
+    </ol>
+  </section>
+
+  <a class="next-project" href="/projects/landing-page/"><p class="eyebrow">NEXT PROJECT</p><h2>Sleepal DTC Website <span aria-hidden="true">↗</span></h2></a>
+</main>
+{% endblock %}

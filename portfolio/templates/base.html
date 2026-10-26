@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fdfcf9">
+  <title>{{ title }}</title><meta name="description" content="{{ description }}">
+  <link rel="canonical" href="https://thingamab0b.github.io{{ path }}">
+  <link rel="icon" href="/assets/portfolio/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/portfolio/fonts/outfit-variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/assets/portfolio/portfolio.css">
+  {% if home %}<link rel="preload" href="/assets/portfolio/figma/imgYuxingPortraitTransparent.png" as="image">{% endif %}
+  <script src="/assets/portfolio/portfolio.js" defer></script>
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="{{ 'home-page' if home else 'case-page' }}" id="top">
+<a class="skip-link" href="#main">跳至正文</a>
+<header class="site-header highlight-border" data-node-id="1:10">
+  <a class="wordmark" href="/" aria-label="Yuxing 作品集首页">Yuxing.</a>
+  <nav aria-label="主导航">
+    <a href="/" class="{{ 'active highlight-border' if home }}" {{ 'aria-current="page"'|safe if home }}>首页</a>
+    <a href="{{ '#about' if home else '/#about' }}">关于我</a>
+    <a href="{{ '#experience' if home else '/#experience' }}">经历</a>
+    <a href="{{ '#projects' if home else '/#projects' }}" class="{{ 'active highlight-border' if not home }}" {{ 'aria-current="true"'|safe if not home }}>项目</a>
+  </nav>
+</header>
+{% block content %}{% endblock %}
+<footer class="site-footer" id="contact" data-node-id="1:189">
+  <div class="wrap footer-content">
+    <div class="footer-contact"><div><p class="eyebrow">GET IN TOUCH</p><h2>Let’s talk.</h2><p class="footer-description">聊聊产品、增长，或下一次合作。</p></div>
+      <div class="email-block"><p class="eyebrow">EMAIL</p><a class="email-button highlight-border" href="mailto:yuxing_young@163.com">yuxing_young@163.com <img src="/assets/portfolio/figma/imgGroup.svg" alt="" width="13.6" height="13.6"></a></div>
+    </div>
+    <div class="footer-bottom"><a class="footer-wordmark" href="/">Yuxing.</a><span>Product &amp; Marketing</span><a class="blog-link" href="/zh/">博客 ↗</a><span class="copyright">© 2026 Yuxing Yang</span><a class="back-to-top" href="#top">返回顶部 <img src="/assets/portfolio/figma/imgGroup1.svg" alt="" width="15.6" height="15.6"></a></div>
+  </div>
+</footer>
+</body>
+</html>

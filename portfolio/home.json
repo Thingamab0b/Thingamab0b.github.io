@@ -1,0 +1,80 @@
+{
+  "cards": [
+    {
+      "slug": "sleep-pod",
+      "title": "Sleepal 睡眠舱",
+      "category": "01 / PRODUCT EXPERIENCE",
+      "summary": "把整晚睡眠变成几分钟的亲身体验",
+      "image": "睡眠舱 Demo 实机联调照片",
+      "role": "方案 · 屏幕 UI · 现场交付",
+      "src": "/assets/portfolio/projects/sleep-pod/monitor-in-use.webp"
+    },
+    {
+      "slug": "landing-page",
+      "title": "Sleepal DTC Website",
+      "category": "02 / WEBSITE & GROWTH",
+      "summary": "从产品定位，到页面上线与转化优化",
+      "image": "Sleepal 预热页首屏",
+      "role": "定位 · 设计开发 · 投放与分析",
+      "src": "/assets/portfolio/projects/landing-page/hero.webp"
+    },
+    {
+      "slug": "marketing-dashboard",
+      "title": "Sleepal 数据看板",
+      "category": "03 / DATA & AI DEVELOPMENT",
+      "summary": "独立借助 AI，完成产品定义与全栈交付",
+      "image": "数据看板交互示意，使用演示数据",
+      "role": "产品定义 · AI 全栈开发 · 验证迭代",
+      "src": "/assets/portfolio/projects/marketing-dashboard/cover.svg"
+    }
+  ],
+  "experience": [
+    {
+      "institution": "格物科技",
+      "date": "2025.03 — Present",
+      "role": "产品经理 · 海外营销增长",
+      "summary": "负责小米生态链 2 条产品线、8 个 SKU。\n推进 Sleepal 海外品牌、CES 展示与众筹转化。",
+      "marker": "imgTimelineMarker"
+    },
+    {
+      "institution": "追觅科技",
+      "date": "2023.07 — 2025.02",
+      "role": "俄语区 GTM",
+      "summary": "参与多品类新品上市、定价与渠道管理。\n搭建覆盖 20+ 渠道、100+ SKU 的价格监控。",
+      "marker": "imgTimelineMarker1"
+    },
+    {
+      "institution": "清华大学",
+      "date": "2019.08 — 2023.07",
+      "role": "工学学士 · 生物医学工程",
+      "summary": "辅修人工智能创新创业 · GPA 3.87 / 4.0\n国家奖学金 · 北京市本科生优秀毕业论文",
+      "marker": "imgTimelineMarker2"
+    }
+  ],
+  "skills": [
+    {
+      "title": "产品定义与交付",
+      "category": "01 / PRODUCT",
+      "description": "需求定义、PRD、研发评审，\n到试产验证与上市交付。",
+      "tools": "Figma · UI/UX · CMF\nSolidWorks"
+    },
+    {
+      "title": "海外上市与增长",
+      "category": "02 / GTM",
+      "description": "市场与竞品研究、海外用户访谈，\n到产品定位、上市及众筹转化。",
+      "tools": "Kickstarter · CES 展示\nPhotoshop · 剪映"
+    },
+    {
+      "title": "数据分析与自动化",
+      "category": "03 / DATA",
+      "description": "用户行为看板、广告归因，\n以及价格监控和重复任务自动化。",
+      "tools": "GA4 · RPA · AI 辅助脚本\nPython · JavaScript"
+    },
+    {
+      "title": "编程与硬件原型",
+      "category": "04 / ENGINEERING",
+      "description": "编程、硬件原型与交互验证，\n支持技术可行性判断。",
+      "tools": "C/C++ · C# · Python · JavaScript\nArduino · ESP32/ESP8266 · Raspberry Pi"
+    }
+  ]
+}

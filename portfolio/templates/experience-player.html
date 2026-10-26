@@ -1,0 +1,25 @@
+  <nav class="experience-timeline" aria-label="体验阶段">
+    <div class="experience-stages"><div class="stage-track">{% for stage in stages %}
+      <button type="button" data-stage="{{loop.index0}}" aria-current="{{'step' if loop.index0 == 2 else 'false'}}"><span class="stage-number">0{{loop.index}}</span><span class="stage-label">{{stage.label}}</span><span class="stage-ticks" aria-hidden="true">{% for tick in range(9) %}<b></b>{% endfor %}</span></button>{% endfor %}
+    </div></div><span class="timeline-playhead" aria-hidden="true"></span>
+  </nav>
+  <section class="paired-media" aria-label="现场与屏幕对照">
+    <figure class="screen-primary"><div class="video-frame"><video id="screen-video" muted playsinline preload="metadata" poster="{{mediaRoot}}screen-sense.jpg" src="{{mediaRoot}}screen-sense.mp4" aria-label="屏幕提示感知心跳与呼吸"></video></div></figure>
+    <div class="product-light" role="img" aria-label="Sleepal 产品灯光，随体验渐亮渐暗"><span class="product-frames">{% for level in [0,20,40,60,80,100] %}<img src="{{mediaRoot}}light-{{'%03d'|format(level)}}.png" width="1200" height="1800" alt="" aria-hidden="true" decoding="async" data-light-level="{{level}}">{% endfor %}</span></div>
+    <figure class="field-support"><div class="video-frame"><video id="field-video" muted playsinline preload="metadata" poster="{{mediaRoot}}field-sense.jpg?v=person-2" src="{{mediaRoot}}field-sense.mp4?v=person-2" aria-label="CES 现场心跳与呼吸感知"></video><button type="button" class="video-expand" data-expand="field-video" aria-label="放大现场视频"></button></div></figure>
+  </section>
+  <section class="experience-explanation" aria-live="polite">
+    <div><h2 id="stage-title">{{stages[2].title}}</h2><p id="stage-description">{{stages[2].description}}</p></div>
+    <div class="experience-playback">
+      <div class="player-transport" role="group" aria-label="体验播放控制">
+        <button type="button" id="play-experience" class="experience-primary" data-state="play" aria-label="播放体验" title="播放体验">
+          <svg class="player-icon icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4.5a1 1 0 0 0-1.5.87v13.26A1 1 0 0 0 8 19.5l11-6.63a1 1 0 0 0 0-1.74Z" fill="currentColor"/></svg>
+          <svg class="player-icon icon-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>
+          <svg class="player-icon icon-replay" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8a8 8 0 1 1-1 7M5 3v5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button type="button" id="next-stage" class="experience-secondary" aria-label="下一阶段" title="下一阶段"><svg class="player-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5.5v13l10-6.5Z" fill="currentColor"/><rect x="17" y="5" width="2.5" height="14" rx="1" fill="currentColor"/></svg></button>
+      </div>
+      <p id="playback-status" class="visually-hidden">从当前阶段开始</p>
+    </div>
+  </section>
+  <noscript><p>启用 JavaScript 后可切换阶段与播放配对片段。<a href="{{mediaRoot}}field-sense.mp4">观看现场片段</a> · <a href="{{mediaRoot}}screen-sense.mp4">观看屏幕片段</a></p></noscript>

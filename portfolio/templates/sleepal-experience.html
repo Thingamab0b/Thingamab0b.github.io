@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sleepal｜看见屏幕，理解体验</title>
+  <meta name="description" content="通过 CES 现场片段与原始屏幕流程，了解 Sleepal 睡眠舱的动作交互。">
+  <link rel="icon" href="/assets/portfolio/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/portfolio/portfolio.css">
+  <link rel="stylesheet" href="/assets/portfolio/sleepal-experience.css">
+  <script src="/assets/portfolio/sleepal-experience.js" defer></script>
+  <script>
+    if (['localhost', '127.0.0.1'].includes(location.hostname) && location.hash.includes('figmacapture=')) {
+      const captureScript = document.createElement('script');
+      captureScript.src = 'https://mcp.figma.com/mcp/html-to-design/capture.js';
+      captureScript.async = true;
+      document.head.appendChild(captureScript);
+    }
+  </script>
+</head>
+<body class="experience-page">
+<a class="skip-link" href="#main">跳至正文</a>
+<main class="experience-layout" id="main" data-initial-stage="2">
+  <header class="experience-context"><a href="/projects/sleep-pod/">← Sleepal / CES 2026</a><span>体验如何发生</span></header>
+  <div class="experience-heading"><h1>看见屏幕，理解体验。</h1><p>从心跳与呼吸，到助眠与唤醒。现场片段辅助理解每一步。</p></div>
+  {% include 'experience-player.html' %}
+</main>
+{% include 'experience-dialog.html' %}
+</body></html>

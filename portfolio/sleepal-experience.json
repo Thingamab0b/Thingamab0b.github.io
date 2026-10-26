@@ -1,0 +1,390 @@
+[
+  {
+    "id": "enter",
+    "label": "进入空间",
+    "title": "走进来，体验已经开始。",
+    "description": "设备感知有人进入，用亮灯与屏幕提示回应。",
+    "fieldTime": "10:49.5–10:57.3",
+    "fieldCaption": "进入睡眠舱，在床边开始体验。",
+    "screenState": "Person Detected",
+    "screenCaption": "原始屏幕流程 · 00:00–00:08",
+    "sound": "欢迎引导",
+    "deviceLight": "亮起",
+    "roomLight": "亮起",
+    "soundLevel": 0.65,
+    "deviceLevel": 0.9,
+    "roomLevel": 0.9,
+    "fieldStart": 649.5,
+    "fieldDuration": 8,
+    "screenStart": 0,
+    "screenDuration": 8,
+    "screenSource": "screen",
+    "fieldSegments": [
+      [
+        649.5,
+        657.3
+      ]
+    ],
+    "fieldSpeed": 1,
+    "fieldHold": 0.2,
+    "lightKeyframes": [
+      [
+        0,
+        0
+      ],
+      [
+        0.3,
+        0
+      ],
+      [
+        2.8,
+        100
+      ],
+      [
+        8,
+        100
+      ]
+    ]
+  },
+  {
+    "id": "lie",
+    "label": "躺下",
+    "title": "躺下，身体成为交互入口。",
+    "description": "从未在床到识别躺下，屏幕给出清晰的下一步引导。",
+    "fieldTime": "11:04.7–11:09.2",
+    "fieldCaption": "从坐在床边到躺下，进入体验。",
+    "screenState": "In Bed Detected",
+    "screenCaption": "原始屏幕流程 · 00:50.8–00:55.3",
+    "sound": "状态引导",
+    "deviceLight": "开启",
+    "roomLight": "逐渐熄灭",
+    "soundLevel": 0.7,
+    "deviceLevel": 0.8,
+    "roomLevel": 0.3,
+    "fieldStart": 664.7,
+    "fieldDuration": 4.5,
+    "screenStart": 50.8,
+    "screenDuration": 4.5,
+    "screenSource": "screen",
+    "fieldSegments": [
+      [
+        664.7,
+        669.2
+      ]
+    ],
+    "fieldSpeed": 1,
+    "fieldHold": 0.0,
+    "lightKeyframes": [
+      [
+        0,
+        100
+      ],
+      [
+        4.5,
+        100
+      ]
+    ]
+  },
+  {
+    "id": "sense",
+    "label": "心跳与呼吸",
+    "title": "不必佩戴，也能感知心跳与呼吸。",
+    "description": "先提示保持静止，再说明正在感知心跳与呼吸，让非接触式监测变得可理解。",
+    "fieldTime": "11:10–11:16.5",
+    "fieldCaption": "保持躺卧，无需佩戴设备。",
+    "screenState": "Heart beat & breathing",
+    "screenCaption": "原始屏幕流程 · 00:55.5–01:02",
+    "sound": "保持静止",
+    "deviceLight": "监测中",
+    "roomLight": "暗环境",
+    "soundLevel": 0.7,
+    "deviceLevel": 0.8,
+    "roomLevel": 0.3,
+    "fieldStart": 670,
+    "fieldDuration": 6.5,
+    "screenStart": 55.5,
+    "screenDuration": 6.5,
+    "screenSource": "screen",
+    "fieldSegments": [
+      [
+        670,
+        676.5
+      ]
+    ],
+    "fieldSpeed": 1,
+    "fieldHold": 0.0,
+    "lightKeyframes": [
+      [
+        0,
+        100
+      ],
+      [
+        6.5,
+        100
+      ]
+    ]
+  },
+  {
+    "id": "sleep",
+    "label": "助眠",
+    "title": "声音与光线，陪人慢慢放松。",
+    "description": "屏幕解释助眠过程，让声光渐弱成为可以理解的产品体验。",
+    "fieldTime": "11:10–11:18",
+    "fieldCaption": "躺卧放松的人物实拍。",
+    "screenState": "Guiding you into sleep",
+    "screenCaption": "屏幕流程精剪 · 保留提示，移除等待",
+    "sound": "渐弱",
+    "deviceLight": "渐暗",
+    "roomLight": "关闭",
+    "soundLevel": 0.9,
+    "deviceLevel": 0.9,
+    "roomLevel": 0,
+    "fieldStart": 670,
+    "fieldDuration": 8,
+    "screenStart": 63.2,
+    "screenDuration": 8,
+    "screenSource": "screen",
+    "fieldSegments": [
+      [
+        670,
+        678
+      ]
+    ],
+    "fieldSpeed": 1,
+    "fieldHold": 0,
+    "screenSegments": [
+      [
+        63.2,
+        66.2
+      ],
+      [
+        72.5,
+        77.5
+      ]
+    ],
+    "mediaRevision": "tight-3",
+    "lightKeyframes": [
+      [
+        0,
+        100
+      ],
+      [
+        1,
+        100
+      ],
+      [
+        7.5,
+        0
+      ],
+      [
+        8,
+        0
+      ]
+    ]
+  },
+  {
+    "id": "monitor",
+    "label": "实时监测",
+    "title": "把身体状态，呈现在屏幕上。",
+    "description": "心率、呼吸、睡姿与体动集中呈现；翻身时，睡姿和体动反馈随之变化。",
+    "fieldTime": "11:47.7–11:56.4",
+    "fieldCaption": "侧卧到仰卧，展示睡姿变化。",
+    "screenState": "Heart · Respiration · Position",
+    "screenCaption": "现场屏幕实拍 · 11:38–11:43 / 12:00–12:08；原片未收录此界面。",
+    "sound": "监测反馈",
+    "deviceLight": "监测中",
+    "roomLight": "暗环境",
+    "soundLevel": 0.7,
+    "deviceLevel": 0.8,
+    "roomLevel": 0.3,
+    "fieldStart": 707.7,
+    "fieldDuration": 13,
+    "screenStart": 698,
+    "screenDuration": 13,
+    "screenSource": "field",
+    "screenSegments": [
+      [
+        698,
+        703
+      ],
+      [
+        720,
+        728
+      ]
+    ],
+    "fieldSegments": [
+      [
+        707.7,
+        716.4
+      ]
+    ],
+    "fieldSpeed": 0.75,
+    "fieldHold": 1.4,
+    "lightKeyframes": [
+      [
+        0,
+        0
+      ],
+      [
+        13,
+        0
+      ]
+    ]
+  },
+  {
+    "id": "wake",
+    "label": "唤醒",
+    "title": "从助眠过渡到唤醒，有迹可循。",
+    "description": "屏幕依次呈现轻睡唤醒、闹钟启动与贪睡提示，解释下一步如何操作。",
+    "fieldTime": "12:13.8–12:39.2 · 人物镜头节选",
+    "fieldCaption": "体验者在床上回应并操作床边设备。",
+    "screenState": "Time to wake → Want to snooze?",
+    "screenCaption": "屏幕流程精剪 · 保留提示，移除等待",
+    "sound": "唤醒提示",
+    "deviceLight": "唤醒灯光",
+    "roomLight": "暗环境",
+    "soundLevel": 0.8,
+    "deviceLevel": 0.9,
+    "roomLevel": 0.3,
+    "fieldStart": 733.8,
+    "fieldDuration": 12,
+    "screenStart": 116,
+    "screenDuration": 12,
+    "screenSource": "screen",
+    "fieldSegments": [
+      [
+        733.8,
+        738.6
+      ],
+      [
+        748.5,
+        754.5
+      ],
+      [
+        758,
+        759.2
+      ]
+    ],
+    "fieldSpeed": 1,
+    "fieldHold": 0,
+    "screenSegments": [
+      [
+        116,
+        120
+      ],
+      [
+        123.5,
+        126.5
+      ],
+      [
+        134,
+        139
+      ]
+    ],
+    "mediaRevision": "tight-3",
+    "lightKeyframes": [
+      [
+        0,
+        0
+      ],
+      [
+        4,
+        100
+      ],
+      [
+        12,
+        100
+      ]
+    ]
+  },
+  {
+    "id": "roll",
+    "label": "翻身贪睡",
+    "title": "一个翻身，也能成为指令。",
+    "description": "唤醒时翻身背向设备，暂停闹钟；屏幕继续提示起身，以结束贪睡。",
+    "fieldTime": "11:47.7–11:56.4",
+    "fieldCaption": "睡姿变化的动作示例，与屏幕流程分开拍摄。",
+    "screenState": "Alarm Paused",
+    "screenCaption": "原始屏幕流程 · 03:02.4–03:30",
+    "sound": "闹钟暂停",
+    "deviceLight": "唤醒灯光",
+    "roomLight": "关闭",
+    "soundLevel": 0.05,
+    "deviceLevel": 0.8,
+    "roomLevel": 0,
+    "fieldStart": 707.7,
+    "fieldDuration": 27.6,
+    "screenStart": 182.4,
+    "screenDuration": 27.6,
+    "screenSource": "screen",
+    "fieldSegments": [
+      [
+        707.7,
+        716.4
+      ]
+    ],
+    "fieldSpeed": 0.75,
+    "fieldHold": 16.0,
+    "lightKeyframes": [
+      [
+        0,
+        100
+      ],
+      [
+        27.6,
+        100
+      ]
+    ]
+  },
+  {
+    "id": "leave",
+    "label": "离床与报告",
+    "title": "起身结束，整晚体验有了总结。",
+    "description": "检测到离床后，提示睡眠报告已经可用，让体验自然收尾。",
+    "fieldTime": "12:39–12:52.7 · 人物镜头节选",
+    "fieldCaption": "坐起后走出睡眠舱，结束体验。",
+    "screenState": "Out-of-Bed Detected",
+    "screenCaption": "原始屏幕流程 · 03:46–03:58",
+    "sound": "闹钟结束",
+    "deviceLight": "体验结束",
+    "roomLight": "保持现场状态",
+    "soundLevel": 0,
+    "deviceLevel": 0.7,
+    "roomLevel": 0.5,
+    "fieldStart": 759,
+    "fieldDuration": 12,
+    "screenStart": 226,
+    "screenDuration": 12,
+    "screenSource": "screen",
+    "fieldSegments": [
+      [
+        759,
+        763.1
+      ],
+      [
+        771.2,
+        772.7
+      ]
+    ],
+    "fieldSpeed": 0.85,
+    "fieldHold": 5.412,
+    "lightKeyframes": [
+      [
+        0,
+        100
+      ],
+      [
+        2,
+        100
+      ],
+      [
+        10,
+        0
+      ],
+      [
+        12,
+        0
+      ]
+    ]
+  }
+]

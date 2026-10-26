@@ -1,4 +1,4 @@
-name: ci 
+name: Publish portfolio
 on:
   push:
     branches:
@@ -6,6 +6,9 @@ on:
       - main
 permissions:
   contents: write
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,15 +18,17 @@ jobs:
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version: '3.12'
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material 
+      - run: mkdocs build
+      - run: python scripts/check_site.py
       - run: mkdocs gh-deploy --force

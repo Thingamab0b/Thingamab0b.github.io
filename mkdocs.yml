@@ -7,6 +7,7 @@ site_author: 南荒北逃
 ## [top]
 theme:
   name: material
+  custom_dir: overrides
   palette: 
     - scheme: default # 日间模式
       primary: indigo # 导航栏主题色
@@ -34,6 +35,7 @@ theme:
 
 # 导航栏
 nav:
+  - 博客首页: zh/index.md
   - 野生技术宅:
     - zh/tech/index.md
     - 技能点列表: zh/tech/技能点列表.md
@@ -158,6 +160,7 @@ nav:
       - 情头: zh/art/design/情头.md
   - 我与这个世界: 
     - zh/me/index.md
+    - 个人作品集: /
     - 个人履历: zh/me/cv.md
     - 足迹: zh/me/footprint.md
 
@@ -178,8 +181,8 @@ markdown_extensions:
   - pymdownx.superfences # 代码块高亮插件
   - meta # 支持Markdown文件上方自定义标题标签等
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.tasklist:
       custom_checkbox: true
       clickable_checkbox: true
@@ -188,27 +191,32 @@ markdown_extensions:
 
       
 extra_javascript:
-  - mkdocs/javascripts/document-reader.js
+  - zh/mkdocs/javascripts/document-reader.js
   # latex支持
   # check https://squidfunk.github.io/mkdocs-material/reference/mathjax/?h=math for more information
   # notice `curl https://polyfill.io/v3/polyfill.min.js?features=es6 > docs/mkdocs/javascripts/polyfill.min.js && curl https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js > docs/mkdocs/javascripts/tex-mml-chtml.js` not works... because there are other resources that need to load
-  - mkdocs/javascripts/mathjax.js
+  - zh/mkdocs/javascripts/mathjax.js
   #- https://cdn.polyfill.io/v2/polyfill.min.js #https://polyfill-fastly.io/v2/polyfill.min.js # https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js # https://cdn.bytedance.com/?query=mathjax&version=3.2.0
 
 extra_css:
-  - mkdocs/css/document-reader.css
-  - mkdocs/css/no-footer.css # 不使用底部的翻页
-  - mkdocs/css/unordered-list-symbols.css # multiplt unordered list symbols
+  - zh/mkdocs/css/document-reader.css
+  - zh/mkdocs/css/no-footer.css # 不使用底部的翻页
+  - zh/mkdocs/css/unordered-list-symbols.css # multiplt unordered list symbols
 
 
 extra:
+  homepage: /zh/
   generator: false
   alternate:
     - name: English
-      link: /en/ 
+      link: /zh/en/
       lang: en
     - name: Chinese
       link: /zh/
       lang: zh
 
+
+# Render the independent portfolio before collecting static pages.
+hooks:
+  - scripts/portfolio.py

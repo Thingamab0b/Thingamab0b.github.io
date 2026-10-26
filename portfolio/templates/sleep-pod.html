@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% from 'project-macros.html' import figure, heading %}
+{% block extra_head %}
+<link rel="stylesheet" href="/assets/portfolio/sleepal-experience.css">
+<link rel="stylesheet" href="/assets/portfolio/sleep-pod.css">
+<script src="/assets/portfolio/sleepal-experience.js" defer></script>
+{% endblock %}
+{% block content %}
+<main id="main" class="case-content sleep-pod-case wrap" data-node-id="1:200">
+  <header class="case-intro">
+    <div class="case-meta"><a href="/#projects">← ALL PROJECTS</a><span>{{project.date}}</span></div>
+    <h1>{{project.title}}</h1>
+    <p class="case-lead">{{project.lead}}</p>
+  </header>
+  <section class="case-section" id="overview" data-node-id="12:2196">
+    <h2 class="pod-section-title">0. 项目概览</h2>
+    <div class="pod-overview-images">
+      <img src="/assets/portfolio/projects/sleep-pod/overview-ces.webp" width="956" height="654" alt="CES 展位：从设计，到 CES 现场" fetchpriority="high">
+      <img src="/assets/portfolio/projects/sleep-pod/overview-experience.webp" width="509" height="327" alt="睡眠舱体验：快速理解产品">
+    </div>
+    <div class="pod-summary">
+      {% for column in project.overviewColumns %}<article>
+        <h3>{{column.label}}</h3>
+        <p class="pod-summary-title">{{column.title|linebreaks}}</p>
+        <p class="pod-summary-body">{{column.body|linebreaks}}</p>
+      </article>{% endfor %}
+    </div>
+  </section>
+  <section class="experience-layout experience-embedded" id="pod-flow" data-initial-stage="2" data-node-id="95:1986" aria-labelledby="pod-experience-title">
+    <div class="experience-heading"><h2 id="pod-experience-title" class="pod-section-title">0. 体验流程设计</h2><p>从心跳与呼吸，到助眠与唤醒。现场片段辅助理解每一步。</p></div>
+    {% include 'experience-player.html' %}
+  </section>
+  <section class="case-section" id="pod-delivery" data-node-id="12:2253">
+    <h2 class="pod-section-title">3. 设计取舍</h2>
+    <p class="case-section-intro">把整晚的监测能力，转化为短时可感知、现场可运行的体验。</p>
+    <article class="pod-decision-feature">
+      <div class="pod-decision-story">
+        <p class="pod-challenge-label">时间窗口 · 关键取舍</p>
+        <h3>让等待有反馈，<br>让数据逐步被看见</h3>
+        <p>体验只有约 3 分钟，心率和呼吸率却需要检测时间。我提出缩短检测时间窗或分步展示指标的方案，与算法团队共同调整展示节奏。</p>
+      </div>
+      <div class="pod-decision-diagram" role="img" aria-label="整晚持续采集的监测能力，通过调整检测窗口和展示节奏，在约三分钟体验内分步呈现：开始检测、采集反馈、指标呈现。">
+        <div class="pod-observation"><span>监测条件</span><strong>整晚持续采集</strong><div class="pod-observation-bar" aria-hidden="true">{% for i in range(8) %}<i></i>{% endfor %}</div></div>
+        <div class="pod-demo-duration"><strong>≈ 3 min</strong><span>分步感知<br>产品能力</span></div>
+        <ol class="pod-reading-stages" aria-hidden="true"><li>开始检测</li><li>采集反馈</li><li>指标呈现</li></ol>
+        <p class="pod-diagram-caption">调整检测窗口与展示节奏</p>
+      </div>
+    </article>
+    <div class="pod-challenges">
+      <article class="pod-challenge">
+        <p class="pod-challenge-label">环境控制</p>
+        <h3>在展会里，还原卧室感知条件</h3>
+        <p class="pod-challenge-body">现场信号复杂，容易干扰监测。通过吸波海绵屏蔽周边杂乱信号，模拟卧室环境，提升演示稳定性。</p>
+        <p class="pod-challenge-path"><span>杂乱信号</span><b aria-hidden="true">→</b><span>吸波屏蔽</span><b aria-hidden="true">→</b><span>可控环境</span></p>
+      </article>
+      <article class="pod-challenge">
+        <p class="pod-challenge-label">自助引导</p>
+        <h3>让参观者知道下一步</h3>
+        <p class="pod-challenge-body">将整晚使用过程浓缩为躺下、翻身和起身等关键动作，通过屏幕引导与设备反馈，帮助参观者理解体验流程。</p>
+        <p class="pod-challenge-path"><span>动作引导</span><b aria-hidden="true">→</b><span>身体体验</span><b aria-hidden="true">→</b><span>状态反馈</span></p>
+      </article>
+      <article class="pod-challenge">
+        <p class="pod-challenge-label">跨端联调</p>
+        <h3>让身体动作、设备与屏幕衔接</h3>
+        <p class="pod-challenge-body">与算法、嵌入式、软件和硬件团队联调，将感知结果、设备响应和界面状态串起来，验证完整交互链路。</p>
+        <p class="pod-challenge-path"><span>感知识别</span><b aria-hidden="true">→</b><span>设备响应</span><b aria-hidden="true">→</b><span>界面同步</span></p>
+      </article>
+      <article class="pod-challenge">
+        <p class="pod-challenge-label">现场交付</p>
+        <h3>让方案在真实现场运行起来</h3>
+        <p class="pod-challenge-body">解决现场网络与设备连接问题，完成展位搭建与端到端流程验证，让设计从方案走向可实际运行的展示。</p>
+        <p class="pod-challenge-path"><span>网络连接</span><b aria-hidden="true">→</b><span>现场搭建</span><b aria-hidden="true">→</b><span>流程验证</span></p>
+      </article>
+    </div>
+  </section>
+  <section class="case-section" id="results" data-node-id="12:2272">
+    {{heading('04 / OUTCOME',project.outcomeTitle)}}
+    <dl class="outcomes">{% for value,label in project.metrics %}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{% endfor %}</dl>
+    <p>{{project.outcome}}</p>
+  </section>
+  <a class="next-project" href="/projects/{{project.nextSlug}}/"><p class="eyebrow">NEXT PROJECT</p><h2>{{project.nextTitle}} <span aria-hidden="true">↗</span></h2><p>{{project.nextDesc}}</p></a>
+</main>
+{% include 'experience-dialog.html' %}
+{% endblock %}

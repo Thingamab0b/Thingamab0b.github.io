@@ -1,0 +1,7 @@
+{% macro figure(label,hint,caption,height=328,wide=false,src='',alt='',fit='contain',dimensions=none,design=false) %}
+<figure class="case-figure {{ 'wide-figure' if wide }}{{ ' design-figure' if design }}">
+  {% if src %}<a class="case-image-link {{ 'photo-cover' if fit == 'cover' }}" href="{{src}}" data-lightbox aria-label="查看大图：{{label}}"><img src="{{src}}" alt="{{alt or label}}" {% if dimensions %}width="{{dimensions[0]}}" height="{{dimensions[1]}}"{% endif %} loading="lazy" decoding="async"><span class="image-expand" aria-hidden="true">↗</span></a>
+  {% else %}<div class="image-placeholder" style="--image-height:{{height}}px"><strong>{{label}}</strong><span>{{hint or '图片待补充'}}</span></div>{% endif %}
+  <figcaption>{{caption}}{% if design %}<span class="design-image-hint">点击查看细节</span>{% endif %}</figcaption></figure>
+{% endmacro %}
+{% macro heading(index,title) %}<div class="case-section-heading"><p class="eyebrow">{{index}}</p><h2>{{title}}</h2></div>{% endmacro %}

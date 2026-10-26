@@ -1,0 +1,400 @@
+[
+  {
+    "key": "Sleepal Demo",
+    "rootName": "02 · Sleepal 睡眠舱 · 连续长页",
+    "date": "2025.09 — 2026.01 / CES 2026",
+    "title": "Sleepal Pod at CES",
+    "lead": "A full night’s experience in a three-minute demo.",
+    "tags": "产品体验设计  /  屏幕 UI  /  跨团队交付",
+    "cover": "睡眠舱 Demo · 实机联调",
+    "coverCaption": "实机联调照片 · 将设备感知的数据，转成观众能看懂的屏幕反馈。",
+    "brief": "为非接触式睡眠监测设备设计自助体验。让 CES 参观者通过躺下、翻身和起身，理解监测、助眠与唤醒功能。",
+    "role": "项目负责人 / 产品与 UI 设计。负责整体方案、体验流程、展位布局、屏幕 UI、跨团队联调与现场执行。",
+    "sections": [
+      {
+        "num": "01 / EXPERIENCE",
+        "title": "让动作带着体验向前走",
+        "intro": "我把整晚睡眠拆成四个可体验的环节：进入时亮灯，躺下后助眠，翻身时看到睡姿变化，起身后结束闹钟并查看报告。",
+        "pair": [
+          {
+            "src": "/assets/portfolio/projects/sleep-pod/person-detected.webp",
+            "label": "进入空间 · Person Detected",
+            "alt": "进入空间 · Person Detected",
+            "caption": "状态 01 · 自动感知进入，提示灯光已开启。",
+            "h": 400,
+            "size": [
+              1061,
+              604
+            ]
+          },
+          {
+            "src": "/assets/portfolio/projects/sleep-pod/in-bed.webp",
+            "label": "躺下确认 · In Bed Detected",
+            "alt": "躺下确认 · In Bed Detected",
+            "caption": "状态 02 · 告诉观众动作已被识别，体验继续。",
+            "h": 400,
+            "size": [
+              1063,
+              594
+            ]
+          }
+        ],
+        "rows": [
+          [
+            "用动作代替按钮",
+            "将“是否有人、是否在床、是否翻身”映射到灯光、声音和屏幕状态。观众不需要学会操作界面，就能完成一次体验。"
+          ]
+        ],
+        "designAssets": [
+          {
+            "src": "/assets/portfolio/projects/sleep-pod/experience-journey.webp",
+            "label": "睡眠舱体验流程",
+            "caption": "体验流程 · 基于 MasterGo 原始方案重新绘制。",
+            "alt": "六步睡眠舱体验：进入亮灯、躺下确认、声光助眠、静止监测、唤醒与翻身贪睡、起身查看报告。",
+            "size": [
+              2160,
+              1389
+            ]
+          }
+        ],
+        "sourceGallery": "查看原始状态界面"
+      },
+      {
+        "num": "02 / INTERFACE",
+        "title": "让用户知道，现在发生了什么",
+        "intro": "我为每一步设计状态提示和下一步指引。监测页集中展示心率、呼吸、睡姿和环境；唤醒时明确告诉观众：翻身暂停闹钟，起身彻底停止。",
+        "wide": {
+          "src": "/assets/portfolio/projects/sleep-pod/live-monitor.webp",
+          "label": "实时监测界面",
+          "alt": "实时监测界面",
+          "caption": "实际演示界面 · 左侧是睡姿与体动，右侧是环境，底部突出心率与呼吸。图中为演示读数。",
+          "h": 400,
+          "size": [
+            778,
+            436
+          ]
+        },
+        "pair": [
+          {
+            "src": "/assets/portfolio/projects/sleep-pod/sleep-aid.webp",
+            "label": "助眠提示 · Sleep Aid Mode On",
+            "alt": "助眠提示 · Sleep Aid Mode On",
+            "caption": "助眠状态 · 将声光变化解释为可理解的体验。",
+            "h": 400,
+            "size": [
+              2000,
+              1105
+            ]
+          },
+          {
+            "src": "/assets/portfolio/projects/sleep-pod/keep-still.webp",
+            "label": "检测等待 · Keep Still",
+            "alt": "检测等待 · Keep Still",
+            "caption": "检测等待 · 明确提示保持静止，解释系统正在做什么。",
+            "h": 400,
+            "size": [
+              2000,
+              1106
+            ]
+          }
+        ],
+        "designAssets": [
+          {
+            "src": "/assets/portfolio/projects/sleep-pod/live-monitor-redraw.webp",
+            "label": "实时监测界面设计",
+            "caption": "信息层次 · 基于原始 UI 重绘；图中数值为示意读数。",
+            "alt": "重绘的 Sleepal 监测界面：先确认睡姿与体动，再看心率与呼吸，最后了解温湿度和光照。",
+            "size": [
+              2160,
+              1323
+            ]
+          },
+          {
+            "src": "/assets/portfolio/projects/sleep-pod/key-states.webp",
+            "label": "关键状态与操作指引",
+            "caption": "关键状态 · 进入、监测、贪睡和离床；英文提示语经过简化。",
+            "alt": "四种关键界面：进入后提示躺下，监测时提示静止，闹钟暂停后提示起身，离床后衔接睡眠报告。",
+            "size": [
+              2160,
+              1977
+            ]
+          }
+        ],
+        "sourceGallery": "查看实际演示界面与联调画面"
+      },
+      {
+        "num": "03 / DELIVERY",
+        "title": "把设计带到真实现场",
+        "intro": "我把体验方案拆成设备摆位、连接、复位和异常处理的执行步骤，与算法、嵌入式、APP 和硬件团队联调，交付现场可照着操作的设置文档。",
+        "note": [
+          "一个关键取舍：如何处理等待读数？",
+          "体验只有约 3 分钟，心率和呼吸率却需要检测时间。我提出缩短检测时间窗或分步展示指标的方案，与研发共同调整展示节奏。"
+        ],
+        "delivery": {
+          "src": "/assets/portfolio/projects/sleep-pod/device-position.webp",
+          "label": "设备摆位说明实拍",
+          "alt": "设备摆位说明实拍",
+          "caption": "交付文档中的摆位照片 · 红线标出设备与床头的朝向关系。",
+          "h": 400,
+          "checklist": [
+            [
+              "摆位",
+              "明确高度差、床边距离和传感器朝向。"
+            ],
+            [
+              "连接与启动",
+              "列出设备、显示器和连接步骤，进入演示流程。"
+            ],
+            [
+              "复位与重试",
+              "提供菜单及遥控器复位方式，便于下一位观众体验。"
+            ]
+          ],
+          "size": [
+            810,
+            1440
+          ]
+        },
+        "designAssets": [
+          {
+            "src": "/assets/portfolio/projects/sleep-pod/interaction-map.webp",
+            "label": "软硬件联动关系",
+            "caption": "交互编排 · 从身体动作到屏幕、声音与灯光的关键反馈关系。",
+            "alt": "入舱触发亮灯和欢迎；躺下开启睡眠流程与声光助眠；翻身暂停闹钟；起身结束闹钟并查看报告。",
+            "size": [
+              2160,
+              1551
+            ]
+          }
+        ]
+      }
+    ],
+    "outcomeTitle": "落地交付，也留下可复用的设计",
+    "metrics": [
+      [
+        "≈ 3 min",
+        "核心自助体验"
+      ],
+      [
+        "CES 2026",
+        "现场展示与流程验证"
+      ],
+      [
+        "APP",
+        "体验方案后续移植"
+      ]
+    ],
+    "outcome": "展会结束后，体验被复用于众筹营销素材，并移植到手机 APP，进入 DVT 内测；后续继续扩展屏显联动。",
+    "nextId": "1:419",
+    "nextTitle": "Sleepal Landing Page",
+    "nextDesc": "从产品定位到页面设计与增长迭代",
+    "slug": "sleep-pod",
+    "nextSlug": "landing-page",
+    "coverSrc": "/assets/portfolio/projects/sleep-pod/monitor-in-use.webp",
+    "coverAlt": "Sleepal Demo 的显示器实拍，展示睡姿、体动、环境、心率和呼吸模块",
+    "coverFit": "contain",
+    "coverSize": [
+      2000,
+      1125
+    ],
+    "overviewColumns": [
+      {
+        "label": "项目目标",
+        "title": "让8小时的睡眠，\n变成3分钟可感知的体验",
+        "body": "为非接触式睡眠监测设备设计自助体验。让 CES 参观者通过躺下、翻身和起身，理解助眠、监测、与唤醒功能。"
+      },
+      {
+        "label": "我的职责",
+        "title": "项目负责人\n用户体验与UI 设计",
+        "body": "体验提炼：从整晚使用流程中，选出能体现产品价值的体验。\n软硬件交互设计：把屏幕操作、设备反馈与体验流程串起来。\nCES 现场落地：协调团队，把设计变成可实际运行的展示。"
+      },
+      {
+        "label": "项目成果",
+        "title": "CES 现场获信任，\n复用于社媒营销与APP",
+        "body": "现场验证：完成 CES 展示与核心体验流程验证，获得现场体验者进一步信任\n营销复用：体验内容用于众筹营销素材。\n产品延续：体验移植到手机 APP。"
+      }
+    ]
+  },
+  {
+    "key": "Sleepal DTC Website",
+    "rootName": "03 · Sleepal Landing Page · 连续长页",
+    "date": "2025.12 — 2026.10  /  PRODUCT & MARKETING",
+    "title": "Sleepal DTC Website",
+    "lead": "让用户理解睡眠产品，\n并愿意迈出下一步。",
+    "tags": "产品定位  /  页面设计与开发  /  转化与数据分析",
+    "cover": "Sleepal · 预热页首屏",
+    "coverCaption": "预热页首屏 · 把产品形态、核心价值与预约入口放在同一屏。",
+    "brief": "从前测、预热到众筹与正式上线，持续迭代产品表达、转化路径和购买体验，并把业务需求转成可执行的设计与技术方案。",
+    "role": "负责产品定位、页面设计与前端实现、投放与数据分析、跨团队推进，以及上线后的持续迭代。",
+    "sections": [
+      {
+        "num": "01 / POSITIONING",
+        "title": "把功能翻译成用户收益",
+        "intro": "我根据用户画像与投放反馈，调整页面的卖点顺序：先讲为什么需要、能怎样改善睡眠，再解释感知技术和数据依据。",
+        "pair": [
+          {
+            "src": "/assets/portfolio/projects/landing-page/sleep-benefits.webp",
+            "label": "睡眠改善叙事模块",
+            "alt": "睡眠改善叙事模块",
+            "caption": "从“记录了什么”到“能帮我做什么” · 实际页面迭代截图，保留修改标注。",
+            "h": 400,
+            "size": [
+              1569,
+              1108
+            ]
+          },
+          {
+            "src": "/assets/portfolio/projects/landing-page/technical-evidence.webp",
+            "label": "技术与研究依据模块",
+            "alt": "技术与研究依据模块",
+            "caption": "为核心卖点补上技术说明与研究依据 · 图中数字为当时页面文案。",
+            "h": 400,
+            "size": [
+              2000,
+              995
+            ]
+          }
+        ],
+        "rows": [
+          [
+            "内容判断",
+            "先说用户为什么需要，再解释产品如何工作；将分散功能串成一条清晰的产品叙事。"
+          ]
+        ]
+      },
+      {
+        "num": "02 / DESIGN & BUILD",
+        "title": "补齐用户做决定所需的信息",
+        "intro": "补充技术演示、设备对比、媒体评价、FAQ 与价格说明，精简重复留资入口，并优化移动端体验。",
+        "wide": {
+          "label": "睡眠洞察模块",
+          "hint": "真实页面截图待补充",
+          "caption": "睡眠洞察模块的迭代截图 · 用睡姿前后对照，让用户看懂监测数据能帮助做什么。红框为当时的修改标注。",
+          "h": 400,
+          "src": "/assets/portfolio/projects/landing-page/sleep-insights.jpg",
+          "alt": "Sleepal 实际页面中的睡姿、打鼾及睡眠环境模块，保留原迭代标注",
+          "size": [
+            1253,
+            773
+          ]
+        },
+        "pair": [
+          {
+            "src": "/assets/portfolio/projects/landing-page/mobile-navigation.webp",
+            "label": "移动端导航修改截图",
+            "alt": "移动端导航修改截图",
+            "caption": "移动端导航 · 为购买入口预留直接路径，缩短寻找和操作步骤。",
+            "h": 400,
+            "size": [
+              462,
+              996
+            ]
+          },
+          {
+            "src": "/assets/portfolio/projects/landing-page/product-comparison.webp",
+            "label": "产品对比表修改截图",
+            "alt": "产品对比表修改截图",
+            "caption": "对比信息前置 · 回答用户为什么选择 Sleepal。红框为原修改标注。",
+            "h": 400,
+            "size": [
+              1222,
+              1400
+            ]
+          }
+        ]
+      },
+      {
+        "num": "03 / CONVERSION",
+        "title": "缩短路径，也跟踪每一步",
+        "intro": "我梳理广告进入后的每一步，精简重复留资入口，调整 thank-you 与定金页的承接，并推动 UTM / ref 参数透传，便于继续判断流量质量和转化表现。",
+        "note": [
+          "我的判断：点击率改善，不等于最终转化改善",
+          "广告端表现改善的同时，页面转化率下降。下一轮重点放在页面承接：补齐决策信息、减少路径流失，并继续观察不同人群与素材的表现。"
+        ],
+        "pair": [
+          {
+            "src": "/assets/portfolio/projects/landing-page/thank-you.webp",
+            "label": "留资后预约引导页面",
+            "alt": "留资后预约引导页面",
+            "caption": "留资后的承接页 · 在确认订阅后继续引导预约。",
+            "h": 400,
+            "size": [
+              1163,
+              547
+            ]
+          },
+          {
+            "src": "/assets/portfolio/projects/landing-page/deposit.webp",
+            "label": "Kickstarter 定金页面修改截图",
+            "alt": "Kickstarter 定金页面修改截图",
+            "caption": "定金页迭代 · 精简介绍、统一价格信息，减少用户做决定的负担。",
+            "h": 400,
+            "size": [
+              1348,
+              705
+            ]
+          }
+        ],
+        "steps": [
+          [
+            "广告进入",
+            "保留来源与活动参数。"
+          ],
+          [
+            "页面理解",
+            "产品收益、对比、FAQ 与价格。"
+          ],
+          [
+            "完成留资",
+            "确认提交，给出清晰下一步。"
+          ],
+          [
+            "预约 / 众筹",
+            "缩短跳转，传递归因参数。"
+          ]
+        ]
+      }
+    ],
+    "outcomeTitle": "用数据决定下一步，而非只看点击",
+    "metrics": [
+      [
+        "3.06% → 6.55%",
+        "广告点击率 CTR"
+      ],
+      [
+        "$0.95 → $0.68",
+        "点击成本 CPC"
+      ],
+      [
+        "18.87% → 9.30%",
+        "页面转化率"
+      ]
+    ],
+    "outcome": "阶段比较：前测期（2025.12–2026.01）与预热期（2026.03）。完成从前测到后众筹的持续迭代，重做产品叙事，优化定金与众筹跳转路径。",
+    "disclaimer": "同期投放规模、人群与素材均有变化，数据差异不能单独归因于页面改版。",
+    "nextId": "1:200",
+    "nextTitle": "Sleepal Demo",
+    "nextDesc": "为 CES 设计的 3 分钟自助睡眠体验",
+    "slug": "landing-page",
+    "nextSlug": "sleep-pod",
+    "coverSrc": "/assets/portfolio/projects/landing-page/hero.webp",
+    "coverAlt": "Sleepal 预热页实际首屏，以产品、APP 报告及预约按钮组成",
+    "coverFit": "contain",
+    "coverSize": [
+      1066,
+      614
+    ]
+  },
+  {
+    "key": "Sleepal 数据看板",
+    "date": "2026.05 — 2026.06  /  PRODUCT & AI DEVELOPMENT",
+    "title": "Sleepal 数据看板",
+    "lead": "独立借助 AI，完成从产品定义到全栈交付。",
+    "brief": "独立借助 AI 完成产品定义、数据接入、前后端与部署，将多平台营销数据组织成可筛选、可追问的分析看板。",
+    "sections": [],
+    "slug": "marketing-dashboard",
+    "nextSlug": "landing-page",
+    "nextTitle": "Sleepal DTC Website",
+    "nextDesc": "从前测、预热到众筹与正式上线的产品表达"
+  }
+]

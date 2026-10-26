@@ -20,7 +20,7 @@
 ⛪️ 交换院系：工程学院
 
 ## 论文
-[毕业设计：基于增强现实的术前规划协作交互系统](docs/zh/tech/Notes/基于增强现实的术前规划协作交互系统.pdf)
+[毕业设计：基于增强现实的术前规划协作交互系统](../tech/Notes/基于增强现实的术前规划协作交互系统.pdf)
 
 [3D Slicer-AR-Bridge: 3D Slicer AR Connection for Medical Image Visualization and Interaction with AR-HMD. ](https://www.researchgate.net/publication/376214586_3D_Slicer-AR-Bridge_3D_Slicer_AR_Connection_for_Medical_Image_Visualization_and_Interaction_with_AR-HMD)
 IEEE International Symposium on Mixed and Augmented Reality Adjunct

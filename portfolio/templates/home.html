@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+<main id="main">
+<section class="hero wrap" id="about" aria-labelledby="hero-title" data-node-id="1:31">
+  <h1 id="hero-title"><span>I’m <em>Yuxing</em>,</span><strong>Product Manager</strong></h1>
+  <div class="portrait-backdrop" aria-hidden="true"></div>
+  <img class="portrait" src="/assets/portfolio/figma/imgYuxingPortraitTransparent.png" width="520" height="520" alt="杨煜行 Yuxing" fetchpriority="high">
+  <ol class="career-tree" aria-label="职业背景">
+    {% for name, note in [('Engineering-Educated','Tsinghua University'),('GTM','From product to market'),('Hardware Product','From idea to delivery')] %}
+    <li><img src="/assets/portfolio/figma/imgCareerNode.svg" alt="" width="9" height="9"><strong>{{name}}</strong><span>{{note}}</span></li>{% endfor %}
+  </ol>
+  <div class="experience-badge"><p><strong>3.5</strong> <span>Years</span></p><span>Product &amp; GTM</span></div>
+  <div class="hero-actions highlight-border"><a href="#projects" class="hero-primary">Projects <span aria-hidden="true">↗</span></a><a href="#skills">About me</a></div>
+</section>
+<section class="projects-section" id="projects" aria-labelledby="projects-title" data-node-id="1:92">
+  <div class="wrap"><h2 class="section-title" id="projects-title">My <em>Projects</em></h2>
+    <div class="project-carousel" aria-roledescription="carousel" aria-label="项目选集">
+      <div class="project-viewport"><div class="project-track" id="project-track">
+        {% for card in cards %}
+        <article class="project-card {{ 'project-coming' if not card.slug }}" aria-label="{{card.title}}">
+          {% if card.slug %}<a class="project-card-art" href="/projects/{{card.slug}}/" aria-label="查看 {{card.title}} 项目">{% else %}<div class="project-card-art">{% endif %}
+            <div class="card-mask">
+              <img class="card-surface" src="/assets/portfolio/figma/imgRectangle7.svg" width="320" height="390.769" alt="">
+              <div class="card-stack"><div></div><div></div><div></div></div>
+              <p class="card-category">{{card.category}}</p><h3>{{card.title}}</h3>
+              <img class="card-rule" src="/assets/portfolio/figma/imgLine3.svg" width="320" height="0.655738" alt="">
+              <p class="card-summary">{{card.summary}}</p>{% if card.src %}<img class="card-project-image" src="{{card.src}}" alt="{{card.image}}" loading="lazy">{% else %}<div class="card-placeholder"><strong>{{card.image}}</strong><small>图片待补充</small></div>{% endif %}<p class="card-role">{{card.role}}</p>
+            </div>
+            <span class="card-arrow highlight-border" aria-hidden="true"><img src="/assets/portfolio/figma/imgIconOutlinedDirectionsStraightArrowsUpRight.svg" width="55.3846" height="55.3846" alt=""></span>
+          {% if card.slug %}</a>{% else %}</div>{% endif %}
+        </article>{% endfor %}
+      </div></div>
+      <div class="carousel-controls"><div class="carousel-dots" aria-label="选择项目页"></div><div class="carousel-arrows"><button class="carousel-prev" type="button" aria-label="上一组项目" aria-controls="project-track" disabled>←</button><button class="carousel-next" type="button" aria-label="下一组项目" aria-controls="project-track">→</button></div></div>
+    </div>
+  </div>
+</section>
+<section class="experience-section wrap" id="experience" aria-labelledby="experience-title" data-node-id="1:148">
+  <div class="center-heading"><h2 class="section-title" id="experience-title">My <em>Experience</em></h2></div>
+  <div class="timeline-container">
+    <img class="timeline-rail" src="/assets/portfolio/figma/imgTimelineDashedConnector.svg" alt="" width="2" height="{{ (experience|length - 1) * 156 }}">
+  <ol class="timeline">
+    {% for item in experience %}
+    <li><div class="timeline-institution"><h3>{{item.institution}}</h3><p class="timeline-date">{{item.date}}</p></div><div class="timeline-marker"><img src="/assets/portfolio/figma/{{item.marker}}.svg" alt="" width="49.5" height="49.5"></div><div class="timeline-role"><h4>{{item.role}}</h4><p>{{item.summary|linebreaks}}</p></div></li>
+    {% endfor %}
+  </ol></div>
+</section>
+<section class="skills-section" id="skills" aria-labelledby="skills-title" data-node-id="6:1653"><div class="wrap">
+  <div class="skills-heading"><h2 class="section-title" id="skills-title">My <em>Skills</em></h2><p>从产品定义到海外上市，<br>也能动手搭建原型与数据工具。</p></div>
+  <div class="skills-grid">{% for item in skills %}<article class="skill-card"><div><h3>{{item.title}}</h3><p class="eyebrow">{{item.category}}</p></div><p class="skill-description">{{item.description|linebreaks}}</p><p class="skill-tools">{{item.tools|linebreaks}}</p></article>{% endfor %}</div>
+  <div class="languages"><p class="eyebrow">LANGUAGES</p><p>中文 · 母语</p><p>English · IELTS 7.5</p></div>
+</div></section>
+</main>
+{% endblock %}

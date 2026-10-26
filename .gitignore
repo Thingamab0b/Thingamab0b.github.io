@@ -1,2 +1,11 @@
 site
 .DS_Store
+__pycache__/
+*.pyc
+总结报告
+CV
+素材
+
+# Track the public portfolio while keeping private CV files ignored.
+!/docs/cv/
+!/docs/cv/**

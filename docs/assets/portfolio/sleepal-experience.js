@@ -1,4 +1,5 @@
 (() => {
+  const t = window.portfolioText;
   const root = document.querySelector('.experience-layout');
   if (!root) return;
   const stages = JSON.parse(document.querySelector('#experience-data').textContent);
@@ -60,7 +61,7 @@
     } else if (!lightAnimation && lightValue !== lightTarget) lightAnimation = requestAnimationFrame(animateLight);
   }
   const lightReady = Promise.all(lightFrames.map(image => image.decode())).then(() => updateLight(scrubbing ? ruler.scrollLeft / pixelsPerSecond : globalTime()));
-  lightReady.catch(() => { status.textContent = '产品图片加载失败，请刷新重试。'; });
+  lightReady.catch(() => { status.textContent = t('产品图片加载失败，请刷新重试。', 'Product images could not load. Please refresh.'); });
   // Blob URLs support precise seeking even on preview servers without HTTP Range.
   function mediaURL(url) {
     if (!assets.has(url)) assets.set(url, fetch(url).then(response => {
@@ -87,7 +88,7 @@
   }
   function showTime(time) {
     playhead.setAttribute('aria-valuenow', time.toFixed(1));
-    playhead.setAttribute('aria-valuetext', `${stages[locate(time)].label}，${Math.floor(time)} 秒`);
+    playhead.setAttribute('aria-valuetext', `${stages[locate(time)].label}, ${Math.floor(time)} ${t('秒', 'seconds')}`);
     updateLight(time);
   }
   function globalTime() { return starts[current] + (desiredTime ?? Math.min(screen.currentTime, stages[current].screenDuration)); }
@@ -106,33 +107,33 @@
     renderTimeline();
   }
   function setPlayState(state) {
-    const label = {play:'播放体验', pause:'暂停体验', replay:'重新播放'}[state];
+    const label = {play:t('播放体验', 'Play experience'), pause:t('暂停体验', 'Pause experience'), replay:t('重新播放', 'Replay')}[state];
     playButton.dataset.state = state; playButton.setAttribute('aria-label',label); playButton.title = label;
   }
   function pause() {
     generation++; playing = false; pending = false; videos.forEach(video => video.pause());
     root.classList.remove('playing'); playButton.disabled = false;
     setPlayState(finished ? 'replay' : 'play'); cancelAnimationFrame(animation);
-    status.textContent = finished ? '体验结束 · 可选择阶段重看' : '从当前时刻开始';
+    status.textContent = finished ? t('体验结束 · 可选择阶段重看', 'Experience complete. Choose a stage to replay.') : t('从当前时刻开始', 'Start from this point');
   }
   function tick() { if (playing) { renderTimeline(); animation = requestAnimationFrame(tick); } }
   async function play() {
     if (pending) return;
     if (finished) selectStage(0);
     const token = ++generation;
-    pending = true; playButton.disabled = true; status.textContent = '正在载入片段…';
+    pending = true; playButton.disabled = true; status.textContent = t('正在载入片段…', 'Loading clips…');
     try {
       const [loaded] = await Promise.all([ready, lightReady]);
       if (token !== generation) return;
-      if (!loaded) { pause(); status.textContent = '素材加载失败，请重试。'; return; }
+      if (!loaded) { pause(); status.textContent = t('素材加载失败，请重试。', 'Media could not load. Please try again.'); return; }
       screen.muted = false;
       await Promise.all(videos.map(video => video.play()));
       if (token !== generation) return;
       pending = false; playing = true; playButton.disabled = false;
       root.classList.add('playing'); setPlayState('pause');
-      status.textContent = '本段结束后进入下一阶段'; tick();
+      status.textContent = t('本段结束后进入下一阶段', 'The next stage will play automatically.'); tick();
     } catch (error) {
-      if (token === generation) { pause(); status.textContent = '视频未能播放，请重试。'; }
+      if (token === generation) { pause(); status.textContent = t('视频未能播放，请重试。', 'Video could not play. Please try again.'); }
     }
   }
   function selectStage(index, resume = false, offset = 0) {
@@ -150,7 +151,7 @@
         const loads = videos.map((video, i) => {
           const kind = i === 0 ? 'field' : 'screen';
           video.poster = `${mediaRoot}${kind}-${stage.id}.jpg?v=${stage.mediaRevision || 'person-2'}`;
-          video.setAttribute('aria-label',`${i === 0 ? '现场' : '屏幕'}：${stage.label}`);
+          video.setAttribute('aria-label',`${i === 0 ? t('现场', 'On site') : t('屏幕', 'Screen')}：${stage.label}`);
           const loaded = waitFor(video,'loadedmetadata',signal);
           video.src = urls[i]; video.load(); return loaded;
         });
@@ -164,7 +165,7 @@
         }
         desiredTime = null; renderTimeline(); return true;
       } catch (error) {
-        if (!signal.aborted) { pause(); status.textContent = '素材加载失败，请刷新重试。'; }
+        if (!signal.aborted) { pause(); status.textContent = t('素材加载失败，请刷新重试。', 'Media could not load. Please refresh.'); }
         return false;
       }
     })();
@@ -233,7 +234,7 @@
     });
   });
   playhead.setAttribute('role','slider'); playhead.tabIndex = 0; playhead.removeAttribute('aria-hidden');
-  playhead.setAttribute('aria-label','体验播放位置'); playhead.setAttribute('aria-valuemin','0'); playhead.setAttribute('aria-valuemax',String(total));
+  playhead.setAttribute('aria-label',t('体验播放位置', 'Experience playback position')); playhead.setAttribute('aria-valuemin','0'); playhead.setAttribute('aria-valuemax',String(total));
   playhead.addEventListener('keydown', event => {
     const delta = event.shiftKey ? 5 : 1;
     const time = {ArrowLeft:globalTime()-delta,ArrowRight:globalTime()+delta,Home:0,End:total}[event.key];

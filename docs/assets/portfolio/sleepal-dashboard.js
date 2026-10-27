@@ -1,4 +1,5 @@
 (() => {
+  const t = window.portfolioText;
   const demo = document.querySelector('[data-dashboard-demo]');
   if (!demo) return;
   // Constructed demonstration records, never business or customer data.
@@ -62,11 +63,11 @@
     }));
     const row = visible.find(row => row.id === selected);
     const [sessions,,wins] = data(row);
-    demo.querySelector('[data-demo-detail-label]').textContent = `${row.name} · 完成页比例`;
+    demo.querySelector('[data-demo-detail-label]').textContent = `${row.name} · ${t('完成页比例', 'Completion rate')}`;
     demo.querySelector('[data-demo-equation]').textContent = `${number(wins)} ÷ ${number(sessions)} = ${percent(wins,sessions)}`;
     demo.querySelector('[data-demo-detail-copy]').textContent = duration.checked
-      ? '完成页会话 ÷ 筛选后的来源会话'
-      : '完成页会话 ÷ 来源会话';
+      ? t('完成页会话 ÷ 筛选后的来源会话', 'Completion-page sessions ÷ filtered source sessions')
+      : t('完成页会话 ÷ 来源会话', 'Completion-page sessions ÷ source sessions');
   }
   category.addEventListener('change',render);
   duration.addEventListener('change',render);

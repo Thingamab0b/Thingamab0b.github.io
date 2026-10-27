@@ -1,10 +1,14 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="{{ 'en' if language == 'en' else 'zh-CN' }}">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#fdfcf9">
   <title>{{ title }}</title><meta name="description" content="{{ description }}">
   <link rel="canonical" href="https://thingamab0b.github.io{{ path }}">
+  <link rel="alternate" hreflang="en" href="https://thingamab0b.github.io{{ english_path }}">
+  <link rel="alternate" hreflang="zh-CN" href="https://thingamab0b.github.io{{ chinese_path }}">
+  <link rel="alternate" hreflang="x-default" href="https://thingamab0b.github.io{{ english_path }}">
+  <script src="/assets/portfolio/language.js"></script>
   <link rel="icon" href="/assets/portfolio/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/portfolio/fonts/outfit-variable.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/assets/portfolio/portfolio.css">
@@ -22,6 +26,7 @@
     <a href="{{ '#experience' if home else '/#experience' }}">经历</a>
     <a href="{{ '#projects' if home else '/#projects' }}" class="{{ 'active highlight-border' if not home }}" {{ 'aria-current="true"'|safe if not home }}>项目</a>
   </nav>
+  {% include 'language-switch.html' %}
 </header>
 {% block content %}{% endblock %}
 <footer class="site-footer" id="contact" data-node-id="1:189">

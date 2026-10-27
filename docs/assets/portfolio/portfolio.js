@@ -1,4 +1,5 @@
 (() => {
+  const t = window.portfolioText;
   const imageDialog = document.querySelector('.image-dialog');
   if (imageDialog) {
     const preview = imageDialog.querySelector('img');
@@ -53,7 +54,7 @@
       dots.replaceChildren(...Array.from({length: pages}, (_, i) => {
         const button = document.createElement('button');
         button.type = 'button';
-        button.setAttribute('aria-label', `第 ${i + 1} 组项目`);
+        button.setAttribute('aria-label', t(`第 ${i + 1} 组项目`, `Project group ${i + 1}`));
         button.setAttribute('aria-controls', 'project-track');
         button.addEventListener('click', () => goTo(i));
         return button;
@@ -89,7 +90,7 @@
     '#landing-results': '/projects/landing-page/#results'
   };
   if (document.body.classList.contains('home-page') && oldProjects[location.hash]) {
-    location.replace(oldProjects[location.hash]);
+    location.replace((document.documentElement.lang.startsWith('zh') ? '/cn' : '') + oldProjects[location.hash]);
     return;
   }
   // Keep the previous portfolio's bookmarked section links useful after migration.
@@ -98,4 +99,45 @@
     history.replaceState(null, '', aliases[location.hash]);
     document.querySelector(aliases[location.hash])?.scrollIntoView();
   }
+})();
+
+// Small depth shifts on the home hero; scrolling stays native throughout.
+(() => {
+  const hero = document.querySelector('.home-page .hero');
+  if (!hero) return;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const desktop = matchMedia('(min-width: 768px)');
+  let frame = 0;
+  const paint = () => {
+    frame = 0;
+    if (reduced.matches || !desktop.matches) {
+      hero.style.removeProperty('--hero-depth');
+      return;
+    }
+    const rect = hero.getBoundingClientRect();
+    const distance = Math.max(0, Math.min(hero.offsetTop - rect.top, rect.height));
+    hero.style.setProperty('--hero-depth', String(distance / Math.max(1, rect.height)));
+  };
+  const schedule = () => { if (!frame) frame = requestAnimationFrame(paint); };
+  window.addEventListener('scroll', schedule, {passive: true});
+  window.addEventListener('resize', schedule, {passive: true});
+  reduced.addEventListener('change', schedule);
+  desktop.addEventListener('change', schedule);
+  schedule();
+
+  const items = document.querySelectorAll('.home-page .timeline > li, .home-page .skill-card');
+  if (!('IntersectionObserver' in window)) return;
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-in-view');
+      observer.unobserve(entry.target);
+    });
+  }, {threshold: 0.08, rootMargin: '0px 0px -24px 0px'});
+  items.forEach((item, index) => {
+    item.classList.add('scroll-reveal');
+    item.style.setProperty('--reveal-delay', `${index < 3 ? 0 : (index - 3) % 2 * 70}ms`);
+    observer.observe(item);
+  });
+  document.body.classList.add('motion-ready');
 })();

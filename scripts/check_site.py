@@ -33,6 +33,8 @@ def target_for(path):
 
 pages = ['/', '/projects/sleep-pod/', '/projects/sleep-pod/experience/', '/projects/landing-page/', '/projects/marketing-dashboard/', '/zh/',
          '/zh/en/', '/zh/blog/', '/zh/me/footprint/', '/zh/tech/thesis/']
+portfolio_pages = pages[:5]
+pages += ['/cn' + path for path in portfolio_pages]
 checked = 0
 for path in pages:
     file = target_for(path)
@@ -47,6 +49,16 @@ for path in pages:
         if url.fragment and target.suffix == '.html':
             assert unquote(url.fragment) in Page(target.read_text()).ids, f'{path}: missing anchor {ref}'
         checked += 1
+
+for path in portfolio_pages:
+    english = target_for(path).read_text()
+    chinese = target_for('/cn' + path).read_text()
+    assert '<html lang="en">' in english, f'English is not the default: {path}'
+    assert '<html lang="zh-CN">' in chinese, f'Missing Chinese version: {path}'
+    assert f'href="/cn{path}" data-language="zh"' in english, f'Missing Chinese switch: {path}'
+    assert f'href="{path}" data-language="en"' in chinese, f'Missing English switch: {path}'
+    assert f'rel="canonical" href="{ORIGIN}/cn{path}"' in chinese
+    assert not re.search(r'[\u3400-\u9fff]', english.replace('中文', '')), f'Untranslated English page: {path}'
 
 redirects = {'/cv/': '/', '/cv/sleep-pod/': '/projects/sleep-pod/',
              '/cv/landing-page/': '/projects/landing-page/',

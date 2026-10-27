@@ -1,9 +1,13 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="{{ 'en' if language == 'en' else 'zh-CN' }}">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sleepal｜看见屏幕，理解体验</title>
   <meta name="description" content="通过 CES 现场片段与原始屏幕流程，了解 Sleepal 睡眠舱的动作交互。">
+  <link rel="canonical" href="https://thingamab0b.github.io{{ path }}">
+  <link rel="alternate" hreflang="en" href="https://thingamab0b.github.io{{ english_path }}">
+  <link rel="alternate" hreflang="zh-CN" href="https://thingamab0b.github.io{{ chinese_path }}">
+  <script src="/assets/portfolio/language.js"></script>
   <link rel="icon" href="/assets/portfolio/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/portfolio/portfolio.css">
   <link rel="stylesheet" href="/assets/portfolio/sleepal-experience.css">
@@ -20,7 +24,7 @@
 <body class="experience-page">
 <a class="skip-link" href="#main">跳至正文</a>
 <main class="experience-layout" id="main" data-initial-stage="2">
-  <header class="experience-context"><a href="/projects/sleep-pod/">← Sleepal / CES 2026</a><span>体验如何发生</span></header>
+  <header class="experience-context"><a href="/projects/sleep-pod/">← Sleepal / CES 2026</a>{% include 'language-switch.html' %}</header>
   <div class="experience-heading"><h1>看见屏幕，理解体验。</h1><p>从心跳与呼吸，到助眠与唤醒。现场片段辅助理解每一步。</p></div>
   {% include 'experience-player.html' %}
 </main>

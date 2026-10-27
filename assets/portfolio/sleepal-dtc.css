@@ -1,0 +1,91 @@
+/* Same type, palette and summary format as the Sleepal sleep-pod case. */
+.dtc-case{gap:64px}
+.dtc-case .case-intro h1{line-height:1.35}
+.dtc-case .case-section{gap:32px;scroll-margin-top:32px}
+.dtc-case .pod-summary{min-height:0;margin-top:8px}
+.dtc-case .pod-summary-title{margin-bottom:24px}
+.dtc-cover img{width:100%;height:auto}
+.dtc-cover figcaption{font-size:13px;margin-top:10px;color:var(--muted)}
+.dtc-phases{display:flex;flex-direction:column;gap:64px;min-width:0}
+.dtc-phase-stage{display:flex;flex-direction:column;gap:28px;min-width:0}
+.dtc-stage-tabs{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:7px;background:#fdfcf9f2;backdrop-filter:blur(16px);border:1px solid #526b5f33;border-radius:14px;box-shadow:0 4px 20px #20211f08}
+.dtc-stage-tabs button{appearance:none;border:0;background:transparent;font-family:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:14px;padding:14px 8px;border-radius:9px;font-size:19px;line-height:28px;color:var(--muted);transition:background .18s,color .18s;white-space:nowrap}
+.dtc-stage-tabs button span{font-family:Outfit,sans-serif;font-size:13px;opacity:.7}
+.dtc-stage-tabs button:hover{background:var(--soft);color:var(--ink)}
+.dtc-stage-tabs button[aria-selected="true"]{background:var(--accent);color:var(--canvas)}
+.dtc-phases [role="tabpanel"][hidden]{display:none}
+.dtc-phases.is-interactive{--stage-top:24px;display:block;position:relative;overflow-anchor:none}
+.dtc-phases.is-interactive .dtc-phase-stage{position:sticky;top:var(--stage-top);height:calc(100svh - 48px)}
+.dtc-phases.is-interactive .dtc-stage-tabs{flex-shrink:0;z-index:2}
+.dtc-phases.is-interactive .dtc-phase-viewport{position:relative;flex:1;min-height:0;overflow:clip;overflow-anchor:none}
+.dtc-phases.is-interactive [role="tabpanel"]{position:absolute;top:0;left:0;width:100%;visibility:hidden;opacity:0;overflow:visible;will-change:transform,opacity}
+.dtc-phases.is-interactive [role="tabpanel"].is-visible{visibility:visible}
+.dtc-phases.is-interactive [role="tabpanel"]>*{flex-shrink:0}
+.dtc-phases.is-interactive .dtc-stage-tabs button{position:relative;overflow:hidden}
+.dtc-phases.is-interactive .dtc-stage-tabs button[aria-selected="true"]:after{content:'';position:absolute;bottom:5px;left:12px;right:12px;height:2px;background:currentColor;opacity:.45;transform:scaleX(var(--stage-progress,0));transform-origin:left}
+.dtc-phases [role="tabpanel"]:focus-visible{outline:2px solid var(--accent);outline-offset:8px}
+.dtc-positioning{display:grid;grid-template-columns:1fr 48px 1fr;align-items:center;gap:24px;padding:28px 36px;background:var(--soft);border-radius:16px;font-size:14px}
+.dtc-positioning strong{display:block;font-size:25px;line-height:36px;color:var(--ink);margin-top:8px}
+.dtc-positioning>span{font-size:28px;color:var(--accent);text-align:center}
+.dtc-case .case-image-link{border-radius:8px;background:#f3f3ef;padding:20px;min-height:0}
+.dtc-case .case-image-link img{width:100%;height:auto;max-height:550px;object-fit:contain}
+.dtc-reading{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.dtc-case h3{font-weight:500}
+.dtc-reading h3,.dtc-preheat-detail h3,.dtc-two-stories h3{font-size:23px;line-height:34px;color:var(--ink);margin-bottom:16px}
+.dtc-metrics{width:100%;border-collapse:collapse;font-size:16px;text-align:left}
+.dtc-metrics caption{text-align:left;font-size:13px;margin-bottom:12px}
+.dtc-metrics th,.dtc-metrics td{padding:12px 8px;border-bottom:1px solid var(--border);font-weight:400;white-space:nowrap}
+.dtc-metrics th:first-child{padding-left:0}
+.dtc-metrics thead{color:var(--muted);font-size:14px}
+.dtc-metrics td{color:var(--ink);font-family:Outfit,sans-serif;font-size:20px}
+.dtc-preheat-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:36px;align-items:start}
+.dtc-preheat-detail{display:flex;flex-direction:column;gap:24px;padding-top:8px}
+.dtc-preheat-detail h3{margin:0}
+.dtc-quiet{font-size:14px;line-height:26px}
+.dtc-flow-panel{background:var(--soft);border-radius:16px;padding:36px}
+.dtc-route{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:0;list-style:none}
+.dtc-route li{position:relative;padding:20px 8px;text-align:center;background:var(--canvas);border:1px solid #526b5f26;border-radius:8px;color:var(--ink);font-size:18px}
+.dtc-route li:not(:last-child):after{content:'→';position:absolute;right:-22px;color:var(--accent)}
+.dtc-flow-notes{display:flex;justify-content:space-between;gap:24px;margin-top:24px;font-size:14px;color:var(--accent)}
+.dtc-two-stories{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.dtc-two-stories article{padding-top:20px;border-top:2px solid #526b5f80}
+.dtc-engineering{display:grid;grid-template-columns:1fr 1fr;gap:48px;background:var(--soft);padding:36px;border-radius:16px}
+.dtc-engineering-story h3{font-size:30px;line-height:42px;color:var(--ink);margin-bottom:20px}
+.dtc-engineering-story ul{padding-left:20px;margin:20px 0 0;font-size:15px;line-height:28px}
+.dtc-spec{padding:24px;background:var(--canvas);border-radius:8px;align-self:center}
+.dtc-spec-title{font-size:14px;color:var(--accent);margin-bottom:14px}
+.dtc-spec-row{padding:14px 0;border-bottom:1px solid var(--border);display:flex;flex-direction:column;gap:3px}
+.dtc-spec-row span{font-size:13px}
+.dtc-spec-row strong{font-size:20px;line-height:30px;color:var(--ink)}
+.dtc-fallback{font-size:13px;margin-top:16px}
+.dtc-milestones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;list-style:none;padding:0}
+.dtc-milestones li{border-top:1px solid var(--border);padding-top:16px}
+.dtc-milestones time{display:block;font:400 16px/28px Outfit;color:var(--accent)}
+.dtc-milestones strong{display:block;font-size:21px;color:var(--ink);margin:8px 0}
+.dtc-milestones p{font-size:15px;line-height:26px}
+.dtc-events{padding-top:16px;align-items:center}
+.dtc-events .data-note{margin-top:16px}
+.dtc-event-values{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.dtc-event-values>div{border-left:1px solid #526b5f66;padding-left:24px}
+.dtc-event-values strong{font:500 56px/1.2 Outfit;color:var(--accent);white-space:nowrap}
+.dtc-event-values strong span{font-size:22px}
+.dtc-event-values p{font-size:14px;margin-top:12px}
+.dtc-capabilities .pod-summary-title{font-size:25px}
+.dtc-emotional-scene img{width:100%;height:auto;border-radius:8px}
+.dtc-emotional-scene figcaption{font-size:13px;margin-top:10px}
+.dtc-copy-shift{display:grid;grid-template-columns:1fr 32px 1fr;gap:24px;align-items:center;padding:32px;background:var(--soft);border-radius:16px}
+.dtc-copy-shift h3{font-size:25px;line-height:36px;color:var(--ink);margin:8px 0 14px}
+.dtc-copy-shift p{font-size:15px}
+.dtc-copy-shift>span{font-size:28px;color:var(--accent)}
+.dtc-implementation{border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.dtc-implementation summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0;cursor:pointer;list-style:none;font-size:22px;line-height:34px;color:var(--ink)}
+.dtc-implementation summary::-webkit-details-marker{display:none}
+.dtc-implementation summary span{color:var(--accent);font-size:26px;transition:transform .2s}
+.dtc-implementation[open] summary span{transform:rotate(45deg)}
+.dtc-implementation summary:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+.dtc-implementation-body{display:flex;flex-direction:column;gap:32px;padding-bottom:32px}
+@media(max-width:639px){.dtc-copy-shift{grid-template-columns:1fr;padding:24px;gap:16px}.dtc-copy-shift>span{transform:rotate(90deg);width:24px}.dtc-copy-shift h3{font-size:22px;line-height:32px}.dtc-implementation summary{font-size:19px;line-height:30px}.dtc-implementation-body{gap:24px}}
+@media(max-width:1023px){.dtc-reading{gap:28px}.dtc-engineering{gap:28px;padding:28px}.dtc-engineering-story h3{font-size:26px;line-height:38px}.dtc-route li{font-size:16px}.dtc-positioning strong{font-size:22px}.dtc-event-values{gap:16px}.dtc-event-values>div{padding-left:16px}.dtc-capabilities .pod-summary-title{font-size:22px}}
+@media(max-width:639px){.dtc-case{gap:48px}.dtc-case .case-intro h1{font-size:34px;line-height:1.25}.dtc-case .case-section{gap:24px}.dtc-phases{gap:40px}.dtc-stage-tabs{padding:5px;gap:2px;border-radius:11px}.dtc-stage-tabs button{padding:12px 4px;font-size:14px;line-height:22px;gap:0;border-radius:7px}.dtc-stage-tabs button span{display:none}.dtc-positioning{grid-template-columns:1fr;gap:12px;padding:24px}.dtc-positioning>span{text-align:left;transform:rotate(90deg);width:24px}.dtc-positioning strong{font-size:22px;margin-top:0}.dtc-case .case-image-link{padding:12px}.dtc-reading,.dtc-preheat-grid,.dtc-two-stories,.dtc-engineering{grid-template-columns:1fr;gap:24px}.dtc-flow-panel{padding:24px}.dtc-route{grid-template-columns:1fr;gap:24px}.dtc-route li{padding:12px}.dtc-route li:not(:last-child):after{right:calc(50% - 8px);bottom:-27px;transform:rotate(90deg)}.dtc-flow-notes{flex-direction:column;gap:8px;font-size:13px}.dtc-engineering{padding:24px}.dtc-spec{padding:20px}.dtc-milestones{grid-template-columns:1fr;gap:24px}.dtc-milestones li{display:grid;grid-template-columns:64px 1fr;gap:0 16px}.dtc-milestones strong{margin:0 0 8px;font-size:20px}.dtc-milestones p{grid-column:2}.dtc-event-values{padding:12px 0}.dtc-event-values strong{font-size:48px}.dtc-metrics td{font-size:19px}}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.dtc-stage-tabs button{transition:none}}
